@@ -1,4 +1,4 @@
 <div class="prueba">
-    <h1>Productos UUUUUUUUUUU</h1>
+    <h1>Productos</h1>
 </div>
 <slot/>

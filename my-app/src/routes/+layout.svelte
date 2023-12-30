@@ -39,10 +39,15 @@
       <a class="AcercaDe" href="/Acercade">Acerca De</a>
     </div>  
   </div>
+<div class="margenContenido">  
 <slot/>
+</div>
 <style>
 
 
+.margenContenido{
+    margin:0 170px 0 170px;
+}
 
  a.Home{
   border: none;

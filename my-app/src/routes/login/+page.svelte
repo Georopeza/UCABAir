@@ -1,3 +1,10 @@
+<script>
+    import Login from '$lib/components/login.svelte'
+</script>
+
 <body>
-    <h1>Login AAAAA USUSUA</h1>
+<Login/>
 </body>
+
+<style>
+</style>

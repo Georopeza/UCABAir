@@ -1,4 +1,3 @@
-<div class="margenContenido">
     <div class="cuadroPublicidades">
         <div class="cuadroPublicidad1">
             <p>Publicidad 1</p>
@@ -65,12 +64,9 @@
                     </div>
         
     </div>
-</div>
 <style>
 
-.margenContenido{
-    margin:0 170px 0 170px;
-}
+
 
 .cuadroPublicidades{
     display:flex;

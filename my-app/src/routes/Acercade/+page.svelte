@@ -1,6 +1,6 @@
 <body>
     <div class="acercade">
-        <p>Acerga</p>
+        <p>Acerca De</p>
     </div>
 </body>
 <style>
