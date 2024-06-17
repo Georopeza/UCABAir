@@ -22,16 +22,20 @@
                 <button type='submit' class="ingresar">Ingresar</button>
             </form>
         </div>
+        <div>Si eres admin pulsa
+            <a href="/moduloGestion">aqui</a>
+        </div>
     </div>
     <div class="lineaSeparacion">
         <p>i</p>
     </div>
     <div class="cajaRegistro">
         <div class="mensajeRegistrate">
-            <p> Si no tienes una cuenta registrate wn</p>
+            <p> Si no tienes una cuenta registrate</p>
             <a href="/registro">Registrarme</a>
         </div>
     </div>
+    
 
 </div>
 
