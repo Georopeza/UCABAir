@@ -26,22 +26,6 @@
     margin:0 170px 0 170px;
 }
 
-
-.botonesCaja3{
-  padding:14px;
-  margin:0 0 0 170px;
-  align-items: center;
-
-}
-
-.palabras{
-  border-radius: 5px;
-  font-style:bold;
-  border-color: gainsboro;
-}
-
-
-
 header{
   position:static;
 }
