@@ -46,11 +46,6 @@ header{
   position:static;
 }
 
-.Caja1{
-  border-bottom: solid gainsboro 2px;
-  margin:0 200px 0 170px;
-}
-
 .Caja2{
   display:flex;
   justify-content: space-between;
