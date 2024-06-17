@@ -1,54 +1,97 @@
 <script>
+  let searchTerm = '';
+
+    function search() {
+    // Lógica de búsqueda
+    console.log(`Buscando: ${searchTerm}`); 
+    }
   let categories = [
-    { id: '/admin/clientes', name: 'Clientes' },
-    { id: '/admin/empleado', name: 'Empleados' },
-    { id: '/admin/inventario', name: 'Inventario' },
-    { id: '/admin/proveedores', name: 'Proveedores' },
-    { id: '/admin/proyectos', name: 'Proyectos' }
+    { id: 'admin/HomeAdmin/clientes', name: 'Clientes' },
+    { id: 'admin/HomeAdmin/empleado', name: 'Empleados' },
+    { id: 'admin/HomeAdmin/mineral', name: 'Mineral' },
+    { id: 'admin/HomeAdmin/proveedores', name: 'Proveedores' },
+    { id: 'admin/HomeAdmin/proyectos', name: 'Proyectos' }
   ];
 </script>
-<div class="ModuloAdministracion">
-    <div class="ModuloAdministracionHeader">
-        <div class="logo">
-            <img src="/src/images/icono.png" alt="minerucab Logo">
-            <img src="/src/images/flecha.png" alt="flecha">
+    <div class="ModuloAdministracion">
+        <div class="ModuloAdministracionHeader">
+            <div class="icono">
+                <img src="/src/images/icono.png" alt="minerucab Logo">
+            </div>
+            <div class="flecha">
+                <img src="/src/images/flecha.png" alt="flecha">
+            </div>
+            <h2>Modulo de Administración</h2>
+        </div>
+        <div class=CategoriasyContenido>
+            <div class="categorias">
+                <h2>Administrar</h2>    
+                    <nav>
+                        <ul>
+                            {#each categories as category}
+                                <li><a href={`/${category.id}`}>{category.name}</a></li>
+                            {/each}
+                        </ul>
+                    </nav>
+            </div>
+            <div class="Contenido">
+                <div class="title">Inventario</div>
+                    <div class="search-bar">
+                        <input class="search-input" type="text" placeholder="Escribe aquí..." bind:value={searchTerm}/>
+                        <button class="search-button" on:click={search}>Buscar</button>
+                    </div>
+                <slot/>
+            </div>
         </div>
     </div>
-    <div class="categorias">
-        <a>Administrar</a>    
-            <nav>
-                <ul>
-                    {#each categories as category}
-                        <li><a href={`/${category.id}`}>{category.name}</a></li>
-                    {/each}
-                </ul>
-            </nav>
-    </div>
-</div>
 <style>
+
+.Contenido{
+    border-color: 10px solid black;
+    margin-top: 70px;
+    width: 100%;
+}
+
+.CategoriasyContenido{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
 
 .ModuloAdministracion{
     display:flex;
-    flex:column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.icono{
+    display:flex;
+    width: 42px;
+    height: 42px;
+    margin-right:25px;
+}
+
+.flecha{
+    display:flex;
+    height: 20px;
+    margin-right:25px;
 }
 
 .ModuloAdministracionHeader{
     display:flex;
     position: absolute;
-    width: 42px;
+    width: 400px;
     height: 46px;
-    left: 300px;
-    top: 363px;
-}
-
-.logo{
-
+    margin-top: 35px;
+    align-items: center;
+    margin-right: 300px;
 }
 
 .categorias{
+    left:0;
+    bottom:0;
+    margin-top: 80px;
     
-    margin-right:800px;
-    margin-top:50px;
 }
 nav ul {
     list-style: none;
@@ -68,4 +111,36 @@ nav a {
     text-decoration: none;
     color: #333;
 }
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: #f3f3f3;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+
+.search-input {
+    flex-grow: 1;
+    border: none;
+    padding: 8px;
+    margin-right: 8px;
+}
+
+.search-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+  .title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
 </style>

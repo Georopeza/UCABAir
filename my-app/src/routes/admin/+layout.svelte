@@ -8,7 +8,7 @@
             <img src="/src/images/minerucab_logo.png" alt="minerucab Logo">
         </div>
         <div class="Admin">
-            <a>Modulo De Administracion</a>
+            <h1>Modulo De Administracion</h1>
         </div>    
       </div>
     </div>
@@ -16,11 +16,10 @@
 
   <div class="Caja3">
   </div>
-<div class="margenContenido">  
+<div class="margenContenido">
 <slot/>
 </div>
 <style>
-
 
 .margenContenido{
     margin:0 170px 0 170px;
@@ -45,11 +44,6 @@ header{
   font-style: bold;
 }
 
-
-.Usuario img{
-  height:30px;
-}
-
 .logo{
   display:flex;
 }
@@ -57,8 +51,5 @@ header{
 .logo img{
   height:50px;
 }
-
-
-
 
 </style>
