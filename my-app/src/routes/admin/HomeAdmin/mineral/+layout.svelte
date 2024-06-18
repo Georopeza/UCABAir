@@ -1,4 +1,10 @@
 <script lang="ts">
+    let searchTerm = '';
+  function search() {
+    // Lógica de búsqueda
+    console.log(`Buscando: ${searchTerm}`); 
+    }
+    let opcionSeleccionada = 'Clientes';
     // Define una interfaz para el tipo de datos que contiene 'datos'
     interface Dato {
       mineral: string;
@@ -10,7 +16,30 @@
     }
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
-    let datos: Dato[] = [
+    let datos: Dato[] = [{
+    mineral: 'Oro',
+    tipo_mineral: 'Metal precioso',
+    origen: 'El Callao, Bolívar',
+    precio_x_unidad: '58$',
+    medida: 'gramo',
+    Empresa_extractora: ['Minera Goldex', 'Corpomin']
+  },
+  {
+    mineral: 'Diamante',
+    tipo_mineral: 'Gema',
+    origen: 'Guarico',
+    precio_x_unidad: '1500$',
+    medida: 'quilate',
+    Empresa_extractora: ['Diamantes del Orinoco', 'Gemstones Corp']
+  },
+  {
+    mineral: 'Cobre',
+    tipo_mineral: 'Metal básico',
+    origen: 'Táchira',
+    precio_x_unidad: '0.75$',
+    medida: 'kilogramo',
+    Empresa_extractora: ['Cobre Andino', 'Metales del Táchira']
+  }
       // Tus datos aquí
     ];
   </script>

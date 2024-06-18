@@ -1,10 +1,10 @@
 <script>
-  let searchTerm = '';
-
+    let searchTerm = '';
     function search() {
     // Lógica de búsqueda
     console.log(`Buscando: ${searchTerm}`); 
     }
+    let opcionSeleccionada = 'Clientes';
   let categories = [
     { id: 'admin/HomeAdmin/clientes', name: 'Clientes' },
     { id: 'admin/HomeAdmin/empleado', name: 'Empleados' },
@@ -35,15 +35,15 @@
                     </nav>
             </div>
             <div class="Contenido">
-                <div class="title">Inventario</div>
-                    <div class="search-bar">
+                <div class="title">{opcionSeleccionada}</div>
+                <div class="search-bar">
                         <input class="search-input" type="text" placeholder="Escribe aquí..." bind:value={searchTerm}/>
                         <button class="search-button" on:click={search}>Buscar</button>
-                    </div>
+                </div>
                 <slot/>
+                </div>
             </div>
-        </div>
-    </div>
+</div>
 <style>
 
 .Contenido{
@@ -119,6 +119,8 @@ nav a {
     background-color: #f3f3f3;
     border-radius: 8px;
     margin-bottom: 16px;
+    width: 50%;
+    margin-left: auto;
   }
 
 .search-input {
@@ -130,17 +132,16 @@ nav a {
 
 .search-button {
     padding: 8px 16px;
-    background-color: #007bff;
+    background-color: #050505;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-  .title {
+.title {
     font-size: 24px;
     color: #333;
     margin-bottom: 8px;
   }
-
 </style>

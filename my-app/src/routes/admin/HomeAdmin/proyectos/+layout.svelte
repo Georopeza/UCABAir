@@ -1,4 +1,10 @@
 <script lang="ts">
+  let searchTerm = '';
+  function search() {
+    // Lógica de búsqueda
+    console.log(`Buscando: ${searchTerm}`); 
+    }
+    let opcionSeleccionada = 'Clientes';
     // Define una interfaz para el tipo de datos que contiene 'datos'
     interface Dato {
       mineral: string;
@@ -13,11 +19,42 @@
     }
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
-    let datos: Dato[] = [
+    let datos: Dato[] = [{
+    mineral: 'Hierro',
+    cliente: 'Construcciones Metálicas C.A.',
+    cantidad_a_extraer: '10000 toneladas',
+    costo: '600000$',
+    ubicacion: 'Cerro Bolívar, Bolívar',
+    fecha_inicial: new Date('2024-01-15'),
+    fecha_fin_estimada: new Date('2024-12-20'),
+    etapa_actual: 'Extracción',
+    estatus: 'En progreso'
+  },
+  {
+    mineral: 'Bauxita',
+    cliente: 'Aluminios del Caroní S.A.',
+    cantidad_a_extraer: '5000 toneladas',
+    costo: '250000$',
+    ubicacion: 'Los Pijiguaos, Bolívar',
+    fecha_inicial: new Date('2024-03-01'),
+    fecha_fin_estimada: new Date('2024-08-30'),
+    etapa_actual: 'Preparación del terreno',
+    estatus: 'Retrasado'
+  },
+  {
+    mineral: 'Oro',
+    cliente: 'Joyerías El Dorado C.A.',
+    cantidad_a_extraer: '100 kilogramos',
+    costo: '4800000$',
+    ubicacion: 'El Callao, Bolívar',
+    fecha_inicial: new Date('2024-05-20'),
+    fecha_fin_estimada: new Date('2025-05-19'),
+    etapa_actual: 'Evaluación ambiental',
+    estatus: 'Pendiente'
+  }
       // Tus datos aquí
     ];
   </script>
-  
   <table>
     <thead>
       <tr>

@@ -1,4 +1,10 @@
 <script lang="ts">
+  let searchTerm = '';
+  function search() {
+    // Lógica de búsqueda
+    console.log(`Buscando: ${searchTerm}`); 
+    }
+    let opcionSeleccionada = 'Clientes';
     // Define una interfaz para el tipo de datos que contiene 'datos'
     interface Dato {
       codigo: string;

@@ -1,6 +1,6 @@
 <script lang="ts">
     // Define una interfaz para el tipo de datos que contiene 'datos'
-    interface Dato {
+    interface Cliente {
       codigo: string;
       nombres: string;
       apellidos: string;
@@ -10,11 +10,34 @@
     }
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
-    let datos: Dato[] = [
+    let datos: Cliente[] = [{
+      codigo: '001',
+      nombres: 'Juan',
+      apellidos: 'Pérez',
+      telefono: ['123456789', '987654321'],
+      correo: ['juan.perez@example.com'],
+      direccion: 'Calle Falsa 123'
+    },
+    {
+      codigo: '002',
+      nombres: 'María',
+      apellidos: 'González',
+      telefono: ['234567890'],
+      correo: ['maria.gonzalez@example.com'],
+      direccion: 'Avenida Siempre Viva 456'
+    },
+    {
+      codigo: '003',
+      nombres: 'Carlos',
+      apellidos: 'Rodríguez',
+      telefono: ['345678901', '765432109'],
+      correo: ['carlos.rodriguez@example.com'],
+      direccion: 'Boulevard de los Sueños Rotos 789'
+    },
+    // Puedes agregar más registros aquí
       // Tus datos aquí
     ];
   </script>
-  
   <table>
     <thead>
       <tr>
@@ -59,5 +82,6 @@
     thead {
       background-color:white;
     }
+
   </style>
   
