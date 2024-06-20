@@ -4,7 +4,7 @@
     // Lógica de búsqueda
     console.log(`Buscando: ${searchTerm}`); 
     }
-    let opcionSeleccionada = 'Clientes';
+    let opcionSeleccionada = 'Mineral';
     // Define una interfaz para el tipo de datos que contiene 'datos'
     interface Dato {
       mineral: string;
@@ -68,7 +68,9 @@
       {/each}
     </tbody>
   </table>
-  
+  <a href="/admin/HomeAdmin/registrar/mineral">
+    <button>Registrar Mineral</button>
+</a>
   <style>
       table {
       width: 100%;

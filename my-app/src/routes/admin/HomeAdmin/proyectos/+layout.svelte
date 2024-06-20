@@ -6,7 +6,7 @@
     }
     let opcionSeleccionada = 'Clientes';
     // Define una interfaz para el tipo de datos que contiene 'datos'
-    interface Dato {
+    interface Proyecto {
       mineral: string;
       cliente: string;
       cantidad_a_extraer: string;
@@ -19,7 +19,7 @@
     }
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
-    let datos: Dato[] = [{
+    let datos: Proyecto[] = [{
     mineral: 'Hierro',
     cliente: 'Construcciones Metálicas C.A.',
     cantidad_a_extraer: '10000 toneladas',
@@ -85,7 +85,9 @@
       {/each}
     </tbody>
   </table>
-  
+  <a href="/admin/HomeAdmin/registrar/proyecto">
+    <button>Registrar Proyecto</button>
+</a>
   <style>
       table {
       width: 100%;

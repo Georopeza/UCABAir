@@ -4,9 +4,9 @@
     // Lógica de búsqueda
     console.log(`Buscando: ${searchTerm}`); 
     }
-    let opcionSeleccionada = 'Clientes';
+    let opcionSeleccionada = 'Empleados';
     // Define una interfaz para el tipo de datos que contiene 'datos'
-    interface Dato {
+    interface Empleado {
       cedula: string;
       nombres: string;
       apellidos: string;
@@ -18,7 +18,7 @@
     }
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
-    let datos: Dato[] = [{
+    let datos: Empleado[] = [{
     cedula: 'V-12345678',
     nombres: 'Juan',
     apellidos: 'Pérez',
@@ -79,7 +79,9 @@
       {/each}
     </tbody>
   </table>
-  
+  <a href="/admin/HomeAdmin/registrar/empleado">
+    <button>Registrar Empleado</button>
+</a>
   <style>
       table {
       width: 100%;

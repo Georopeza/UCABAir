@@ -4,8 +4,8 @@
     // Lógica de búsqueda
     console.log(`Buscando: ${searchTerm}`); 
     }
-    let opcionSeleccionada = 'Clientes';
-    interface Dato {
+    let opcionSeleccionada = 'Proveedor';
+    interface Proveedor {
       razon_social: string;
       rif: string;
       direccion_fiscal: string;
@@ -14,7 +14,7 @@
       capacidad_instalada: string;
     }
   
-    let datos: Dato[] = [{
+    let datos: Proveedor[] = [{
     razon_social: 'Industrias Metalmecánicas Orinoco C.A.',
     rif: 'J-30584623-7',
     direccion_fiscal: 'Zona Industrial Matanzas, Puerto Ordaz, Bolívar',
@@ -66,7 +66,9 @@
       {/each}
     </tbody>
   </table>
-  
+  <a href="/admin/HomeAdmin/registrar/proveedor">
+    <button>Registrar Proveedor</button>
+</a>
   <style>
       table {
       width: 100%;

@@ -4,7 +4,7 @@
     // Lógica de búsqueda
     console.log(`Buscando: ${searchTerm}`); 
     }
-    let opcionSeleccionada = 'Clientes';
+    let opcionSeleccionada = 'Maquinaria';
     // Define una interfaz para el tipo de datos que contiene 'datos'
     interface Dato {
       codigo: string;

@@ -1,7 +1,7 @@
 <script lang="ts">
     // Define una interfaz para el tipo de datos que contiene 'datos'
     interface Cliente {
-      codigo: string;
+      cedula: string;
       nombres: string;
       apellidos: string;
       telefono: string[];
@@ -11,7 +11,7 @@
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
     let datos: Cliente[] = [{
-      codigo: '001',
+      cedula: '27660324',
       nombres: 'Juan',
       apellidos: 'Pérez',
       telefono: ['123456789', '987654321'],
@@ -19,7 +19,7 @@
       direccion: 'Calle Falsa 123'
     },
     {
-      codigo: '002',
+      cedula: '22931928',
       nombres: 'María',
       apellidos: 'González',
       telefono: ['234567890'],
@@ -27,7 +27,7 @@
       direccion: 'Avenida Siempre Viva 456'
     },
     {
-      codigo: '003',
+      cedula: '39029839',
       nombres: 'Carlos',
       apellidos: 'Rodríguez',
       telefono: ['345678901', '765432109'],
@@ -41,7 +41,7 @@
   <table>
     <thead>
       <tr>
-        <th>Código</th>
+        <th>Cédula</th>
         <th>Nombres</th>
         <th>Apellidos</th>
         <th>Teléfono</th>
@@ -52,7 +52,7 @@
     <tbody>
       {#each datos as dato}
         <tr>
-          <td>{dato.codigo}</td>
+          <td>{dato.cedula}</td>
           <td>{dato.nombres}</td>
           <td>{dato.apellidos}</td>
           <td>{dato.telefono}</td>
@@ -62,7 +62,9 @@
       {/each}
     </tbody>
   </table>
-  
+  <a href="/admin/HomeAdmin/registrar/cliente">
+    <button>Registrar Cliente</button>
+</a>
   <style>
       table {
       width: 100%;
