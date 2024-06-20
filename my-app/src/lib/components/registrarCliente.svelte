@@ -48,8 +48,9 @@
   
     <!-- Agrega más campos según la interfaz Empleado -->
     <!-- Ejemplo: teléfono, correo, área de trabajo, sueldo, especialidad -->
-  
-    <button type="submit">Registrar Cliente</button>
+    <a href="/admin/HomeAdmin/clientes">
+      <button type="submit">Registrar Cliente</button>
+    </a>
   </form>
   
   <style>

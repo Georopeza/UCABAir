@@ -15,6 +15,7 @@
       area_trabajo: string;
       sueldo: string;
       especialidad:string;
+      rol:string;
     }
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
@@ -26,7 +27,8 @@
     correo: ['juan.perez@example.com', 'jperez@workemail.com'],
     area_trabajo: 'Ingeniería',
     sueldo: '2500$',
-    especialidad: 'Desarrollo de Software'
+    especialidad: 'Desarrollo de Software',
+    rol:'empleado'
   },
   {
     cedula: 'E-87654321',
@@ -36,7 +38,8 @@
     correo: ['maria.gonzalez@example.com', 'mgonzalez@workemail.com'],
     area_trabajo: 'Recursos Humanos',
     sueldo: '2000$',
-    especialidad: 'Gestión del Talento'
+    especialidad: 'Gestión del Talento',
+    rol:'empleado'
   },
   {
     cedula: 'V-12344321',
@@ -46,7 +49,8 @@
     correo: ['carlos.martinez@example.com', 'cmartinez@workemail.com'],
     area_trabajo: 'Marketing',
     sueldo: '2200$',
-    especialidad: 'Estrategia Digital'
+    especialidad: 'Estrategia Digital',
+    rol:'admin'
   }
       // Tus datos aquí
     ];
@@ -62,6 +66,7 @@
         <th>Area de Trabajo</th>
         <th>Sueldo</th>
         <th>Especialidad</th>
+        <th>Rol</th>
       </tr>
     </thead>
     <tbody>
@@ -75,6 +80,7 @@
           <td>{dato.area_trabajo}</td>
           <td>{dato.sueldo}</td>
           <td>{dato.especialidad}</td>
+          <td>{dato.rol}</td>
         </tr>
       {/each}
     </tbody>

@@ -64,7 +64,7 @@
   </table>
   <a href="/admin/HomeAdmin/registrar/cliente">
     <button>Registrar Cliente</button>
-</a>
+  </a>
   <style>
       table {
       width: 100%;

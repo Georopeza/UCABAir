@@ -49,7 +49,9 @@
     <label for="precio">Precio</label>
     <input id="precio" bind:value={precio} />
 
-    <button type="submit">Registrar Mineral</button>
+    <a href="/admin/HomeAdmin/mineral">
+      <button type="submit">Registrar Mineral</button>
+    </a>
   </form>
 
   <style>

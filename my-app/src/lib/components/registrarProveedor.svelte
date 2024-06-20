@@ -48,8 +48,9 @@
   
     <!-- Agrega más campos según la interfaz Proveedor -->
     <!-- Ejemplo: teléfono, correo, capacidad instalada -->
-  
-    <button type="submit">Registrar Proveedor</button>
+    <a href="/admin/HomeAdmin/proveedores">
+      <button type="submit">Registrar Proveedor</button>
+    </a>
   </form>
   
   <style>

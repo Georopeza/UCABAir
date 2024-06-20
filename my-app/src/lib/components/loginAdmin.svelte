@@ -10,9 +10,6 @@ import { goto } from '$app/navigation';
     let password='';
 
 </script>
-
-
-
     <div class="cajaInicioSesion">
         <a>Ingrese con sus credenciales de inicio de sesion</a>
         <div class="cajaborde">

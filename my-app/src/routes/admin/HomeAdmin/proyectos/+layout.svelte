@@ -85,9 +85,9 @@
       {/each}
     </tbody>
   </table>
-  <a href="/admin/HomeAdmin/registrar/proyecto">
+  <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto">
     <button>Registrar Proyecto</button>
-</a>
+  </a>
   <style>
       table {
       width: 100%;

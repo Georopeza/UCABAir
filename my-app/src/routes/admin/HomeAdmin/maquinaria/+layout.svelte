@@ -6,45 +6,85 @@
     }
     let opcionSeleccionada = 'Maquinaria';
     // Define una interfaz para el tipo de datos que contiene 'datos'
-    interface Dato {
-      codigo: string;
-      nombres: string;
-      apellidos: string;
-      telefono: string;
-      correo: string;
-      direccion: string;
+    interface Maquinaria {
+      tipo_maquinaria: string;
+      nombre: string;
+      placa_identificacion: string;
+      marca: string;
+      modelo: string;
+      estado: string[];
+      fecha_adquisicion: Date;
+      ubicacion: string;
+      valor: string;
+      comentario:string;
     }
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
-    let datos: Dato[] = [
-      // Tus datos aquí
-    ];
+    let datos: Maquinaria[] = [
+  {
+    tipo_maquinaria: "Excavadora",
+    nombre: "CAT 320D",
+    placa_identificacion: "ABC123",
+    marca: "Caterpillar",
+    modelo: "320D",
+    estado: ["Operativa"],
+    fecha_adquisicion: new Date("2022-05-15"),
+    ubicacion: "Obra de construcción",
+    valor: "USD 150,000",
+    comentario: "Buena condición general",
+  },
+  {
+    tipo_maquinaria: "Grúa",
+    nombre: "Liebherr LTM 1200-5.1",
+    placa_identificacion: "XYZ789",
+    marca: "Liebherr",
+    modelo: "LTM 1200-5.1",
+    estado: ["En mantenimiento"],
+    fecha_adquisicion: new Date("2021-10-01"),
+    ubicacion: "Depósito",
+    valor: "EUR 800,000",
+    comentario: "Necesita reparaciones",
+  },
+  // Agrega más registros según tus necesidades
+];
+
   </script>
   
   <table>
     <thead>
       <tr>
-        <th>Código</th>
-        <th>Nombres</th>
-        <th>Apellidos</th>
-        <th>Teléfono</th>
-        <th>Correo</th>
-        <th>Dirección</th>
+        <th>Tipo de Maquinaria</th>
+        <th>Nombre</th>
+        <th>Placa</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Estado</th>
+        <th>Fecha Adquisicion</th>
+        <th>Ubicacion</th>
+        <th>Valor</th>
+        <th>Comentario</th>
       </tr>
     </thead>
     <tbody>
       {#each datos as dato}
         <tr>
-          <td>{dato.codigo}</td>
-          <td>{dato.nombres}</td>
-          <td>{dato.apellidos}</td>
-          <td>{dato.telefono}</td>
-          <td>{dato.correo}</td>
-          <td>{dato.direccion}</td>
+          <td>{dato.tipo_maquinaria}</td>
+          <td>{dato.nombre}</td>
+          <td>{dato.placa_identificacion}</td>
+          <td>{dato.marca}</td>
+          <td>{dato.modelo}</td>
+          <td>{dato.estado.join(', ')}</td>
+          <td>{dato.fecha_adquisicion.toLocaleDateString()}</td>
+          <td>{dato.ubicacion}</td>
+          <td>{dato.valor}</td>
+          <td>{dato.comentario}</td>
         </tr>
       {/each}
     </tbody>
   </table>
+  <a href="/admin/HomeAdmin/registrar/maquinaria">
+    <button>Registrar Maquinaria</button>
+  </a>
   
   <style>
       table {

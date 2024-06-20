@@ -5,23 +5,13 @@
       cliente: string;
       cantidad_a_extraer: string;
       costo: string;
-      ubicacion: string;
-      fecha_inicial: Date;
-      fecha_fin_estimada: Date;
-      etapa_actual: string;
-      estatus: string;
     }
   
     let proyecto: Proyecto = {
       mineral: '',
       cliente: '',
       cantidad_a_extraer: '',
-      costo: '',
-      ubicacion: '',
-      fecha_inicial: new Date(),
-      fecha_fin_estimada: new Date(),
-      etapa_actual: '',
-      estatus: '',
+      costo:''
     };
   
     // Función para manejar el envío del formulario
@@ -32,37 +22,14 @@
   </script>
   
   <form on:submit|preventDefault={registrarDato}>
-    <h2>Registrar Proyecto</h2>
+    <h2>Configuracion Explotacion</h2>
   
     <label for="mineral">Mineral</label>
     <input id="mineral" bind:value={proyecto.mineral} />
   
-    <label for="cliente">Cliente</label>
-    <input id="cliente" bind:value={proyecto.cliente} />
-  
-    <label for="cantidadExtraer">Cantidad a extraer</label>
-    <input id="cantidadExtraer" bind:value={proyecto.cantidad_a_extraer} />
-  
-    <label for="costo">Costo</label>
-    <input id="costo" bind:value={proyecto.costo} />
-  
-    <label for="ubicacion">Ubicación</label>
-    <input id="ubicacion" bind:value={proyecto.ubicacion} />
-  
-    <label for="fechainicial">Fecha Inicial</label>
-    <input id="fechainicial" bind:value={proyecto.fecha_inicial} />
-  
-    <label for="fechafinestimada">Fecha Fin Estimada</label>
-    <input id="fechafinestimada" bind:value={proyecto.fecha_fin_estimada} />
-  
-    <label for="etapa_actual">Etapa Actual</label>
-    <input id="etapa_actual" bind:value={proyecto.etapa_actual} />
-  
-    <label for="estatus">Estatus</label>
-    <input id="estatus" bind:value={proyecto.estatus} />
 
-  <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto">
-    <button type="submit">Registrar Proyecto</button>
+  <a href="/admin/HomeAdmin/proyectos">
+    <button type="submit">Registrar configuracion Proyecto</button>
   </a>
   </form>
   

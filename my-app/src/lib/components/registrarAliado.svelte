@@ -1,0 +1,95 @@
+<script lang=ts>
+  // Interfaz para representar un proveedor
+  interface Proveedor {
+    razon_social: string;
+    rif: string;
+    direccion_fiscal: string;
+    telefono: string[];
+    correo: string[];
+    capacidad_instalada: string;
+  }
+
+  let proveedor: Proveedor = {
+    razon_social: '',
+    rif: '',
+    direccion_fiscal: '',
+    telefono: [],
+    correo: [],
+    capacidad_instalada: '',
+  };
+
+  // Función para manejar el envío del formulario
+  function registrarProveedor() {
+    // Aquí iría la lógica para procesar los datos del formulario
+    console.log('Registrando proveedor:', proveedor);
+  }
+</script>
+
+<form on:submit|preventDefault={registrarProveedor}>
+  <h2>Registrar Aliado</h2>
+
+  <label for="razonSocial">Razón Social</label>
+  <input id="razonSocial" bind:value={proveedor.razon_social} />
+
+  <label for="rif">RIF</label>
+  <input id="rif" bind:value={proveedor.rif} />
+
+  <label for="direccionFiscal">Dirección Fiscal</label>
+  <input id="direccionFiscal" bind:value={proveedor.direccion_fiscal} />
+
+  <label for="telefono">Telefono</label>
+  <input id="telefono" bind:value={proveedor.telefono} />
+
+  <label for="correo">Correo</label>
+  <input id="correo" bind:value={proveedor.correo} />
+
+  <label for="capacidadInstalada">Capacidad Instalada</label>
+  <input id="capacidadinstalada" bind:value={proveedor.capacidad_instalada} />
+
+  <!-- Agrega más campos según la interfaz Proveedor -->
+  <!-- Ejemplo: teléfono, correo, capacidad instalada -->
+  <a href="/admin/HomeAdmin/aliados">
+    <button type="submit">Registrar Aliados</button>
+  </a>
+</form>
+
+<style>
+  /* Estilos generales para el formulario */
+  form {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Estilos para las etiquetas y campos de entrada */
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  input {
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+
+  /* Estilos para el botón de envío */
+  button {
+    background-color: #050505;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+</style>
