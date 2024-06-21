@@ -1,6 +1,7 @@
 <script lang=ts>
     // Interfaz para representar un dato
     const fecha=new Date();
+    export let isOpen=false;
 
     interface Empleados {
       cant_empleados: string;
@@ -20,28 +21,30 @@
       console.log('Registrando dato:', empleados);
     }
   </script>
-  
-  <form on:submit|preventDefault={registrarDato}>
-    <div class="agregarEmpleado">
+  {#if isOpen}
+  <div class="modal">
+    <form on:submit|preventDefault={registrarDato}>
+      <div class="agregarEmpleado">
 
-        <label for="cant_empleados">Cantidad de Empleados</label>
-        <input id="cant_empleados" bind:value={empleados.cant_empleados} />
+          <label for="cant_empleados">Cantidad de Empleados</label>
+          <input id="cant_empleados" bind:value={empleados.cant_empleados} />
 
-        <label for="area_trabajo">Area De Trabajo</label>
-        <select id="area_trabajo" bind:value={empleados.area_trabajo}>
-          <option value="Geologo">Geologo</option>
-          <option value="Minero">Minero</option>
-        </select>
+          <label for="area_trabajo">Area De Trabajo</label>
+          <select id="area_trabajo" bind:value={empleados.area_trabajo}>
+            <option value="Geologo">Geologo</option>
+            <option value="Minero">Minero</option>
+          </select>
 
-        <label for="sueldo">Sueldo</label>
-        <input id="sueldo" bind:value={empleados.sueldo} />
-
+          <label for="sueldo">Sueldo</label>
+          <input id="sueldo" bind:value={empleados.sueldo} />
     </div>
+  </form>
+</div>
+{/if}
 
 <!--   <a href="/admin/HomeAdmin/proyectos">
     <button type="submit">Registrar empleados</button>
   </a> -->
-  </form>
   
   <style>
     /* Estilos generales para el formulario */
