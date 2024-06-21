@@ -1,17 +1,20 @@
 <script lang=ts>
+  const fecha=new Date();
     // Interfaz para representar un dato
     interface Proyecto {
       mineral: string;
-      cliente: string;
       cantidad_a_extraer: string;
-      costo: string;
+      ubicacion: string;
+      fecha_inicial: string;
+      fecha_fin_estimada: string;
     }
   
     let proyecto: Proyecto = {
       mineral: '',
-      cliente: '',
       cantidad_a_extraer: '',
-      costo:''
+      ubicacion:'',
+      fecha_inicial: fecha.toLocaleDateString(),
+      fecha_fin_estimada: fecha.toLocaleDateString()
     };
   
     // Función para manejar el envío del formulario
@@ -26,10 +29,22 @@
   
     <label for="mineral">Mineral</label>
     <input id="mineral" bind:value={proyecto.mineral} />
+
+    <label for="cantidad_a_extraer">Cantidad a extraer</label>
+    <input id="cantidad_a_extraer" bind:value={proyecto.cantidad_a_extraer} />
+
+    <label for="ubicacion">Ubicacion</label>
+    <input id="ubicacion" bind:value={proyecto.ubicacion} />
+
+    <label for="fecha_inicial">Fecha Inicial</label>
+    <input id="fecha_inicial" bind:value={proyecto.fecha_inicial} />
+
+    <label for="fecha_fin_estimada">Fecha Final (estimada)</label>
+    <input id="fecha_fin_estimada" bind:value={proyecto.fecha_fin_estimada} />
   
 
-  <a href="/admin/HomeAdmin/proyectos">
-    <button type="submit">Registrar configuracion Proyecto</button>
+  <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa">
+    <button type="submit">Registrar configuracion inicial Proyecto</button>
   </a>
   </form>
   

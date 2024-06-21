@@ -1,5 +1,6 @@
 <script lang="ts">
   let searchTerm = '';
+  const fecha=new Date();
   function search() {
     // Lógica de búsqueda
     console.log(`Buscando: ${searchTerm}`); 
@@ -12,8 +13,8 @@
       cantidad_a_extraer: string;
       costo: string;
       ubicacion: string;
-      fecha_inicial: Date;
-      fecha_fin_estimada: Date;
+      fecha_inicial: string;
+      fecha_fin_estimada: string;
       etapa_actual: string;
       estatus:string;
     }
@@ -25,8 +26,8 @@
     cantidad_a_extraer: '10000 toneladas',
     costo: '600000$',
     ubicacion: 'Cerro Bolívar, Bolívar',
-    fecha_inicial: new Date('2024-01-15'),
-    fecha_fin_estimada: new Date('2024-12-20'),
+    fecha_inicial: fecha.toLocaleDateString(),
+    fecha_fin_estimada:fecha.toLocaleDateString() ,
     etapa_actual: 'Extracción',
     estatus: 'En progreso'
   },
@@ -36,8 +37,8 @@
     cantidad_a_extraer: '5000 toneladas',
     costo: '250000$',
     ubicacion: 'Los Pijiguaos, Bolívar',
-    fecha_inicial: new Date('2024-03-01'),
-    fecha_fin_estimada: new Date('2024-08-30'),
+    fecha_inicial: fecha.toLocaleDateString(),
+    fecha_fin_estimada: fecha.toLocaleDateString(),
     etapa_actual: 'Preparación del terreno',
     estatus: 'Retrasado'
   },
@@ -47,8 +48,8 @@
     cantidad_a_extraer: '100 kilogramos',
     costo: '4800000$',
     ubicacion: 'El Callao, Bolívar',
-    fecha_inicial: new Date('2024-05-20'),
-    fecha_fin_estimada: new Date('2025-05-19'),
+    fecha_inicial: fecha.toLocaleDateString(),
+    fecha_fin_estimada: fecha.toLocaleDateString(),
     etapa_actual: 'Evaluación ambiental',
     estatus: 'Pendiente'
   }

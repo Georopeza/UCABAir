@@ -6,7 +6,7 @@
     }
     let opcionSeleccionada = 'Mineral';
     // Define una interfaz para el tipo de datos que contiene 'datos'
-    interface Dato {
+    interface Mineral {
       mineral: string;
       tipo_mineral: string;
       origen: string;
@@ -16,7 +16,7 @@
     }
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
-    let datos: Dato[] = [{
+    let datos: Mineral[] = [{
     mineral: 'Oro',
     tipo_mineral: 'Metal precioso',
     origen: 'El Callao, Bolívar',
