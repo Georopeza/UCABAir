@@ -1,17 +1,31 @@
-<script>
-    let idProducto='';
-    let nombreMineral='';
-    let tipoMineral = ['Metálico','No Metálico']; // Valor predeterminado
-    let cantidad_a_registrar='';
-    let unidadMedida = 'Toneladas/Metricas'; // Valor predeterminado
-    let lugar_extraccion='';
-    let empresa_extractora='';
-    let precio='';
+<script lang=ts>
+    export let idProducto='9182921';
+    interface Mineral{
+      idProducto:number;
+      nombreMineral:string;
+      tipoMineral:string[]; // Valor predeterminado
+      cantidad_a_registrar:number;
+      unidadMedida:string; // Valor predeterminado
+      lugar_extraccion:string;
+      empresa_extractora:string;
+      precio:number;
+  }
+
+    let mineral: Mineral = {
+      idProducto:182918,
+      nombreMineral: 'Cuarzo',
+      tipoMineral: ['Metalico', 'No Metalico'],
+      cantidad_a_registrar: 100,
+      unidadMedida: 'Toneladas',
+      lugar_extraccion: 'Mina de cuarzo de Brasil',
+      empresa_extractora: 'Minerales S.A.',
+      precio: 1000
+    };
   
     // Función para manejar el envío del formulario
     function registrarMineral() {
       // Aquí iría la lógica para procesar los datos del formulario
-      console.log('Registrando mineral:', { idProducto, nombreMineral, tipoMineral, cantidad_a_registrar, unidadMedida, lugar_extraccion,empresa_extractora,precio });
+      console.log('Registrando mineral:', { mineral });
     }
   </script>
   
@@ -19,35 +33,35 @@
     <h2>Registrar Mineral</h2>
     
     <label for="idProducto">ID de Producto</label>
-    <input id="idProducto" bind:value={idProducto} />
+    <input id="idProducto" bind:value={mineral.idProducto} />
   
     <label for="nombreMineral">Nombre del Mineral</label>
-    <input id="nombreMineral" bind:value={nombreMineral} />
+    <input id="nombreMineral" bind:value={mineral.nombreMineral} />
   
     <label for="tipoMineral">Tipo de mineral</label>
-    <select id="tipoMineral" bind:value={tipoMineral}>
+    <select id="tipoMineral" bind:value={mineral.tipoMineral}>
       <option value="Metálico">Metálico</option>
       <option value="No Metálico">No Metálico</option>
       <!-- Agrega más opciones según sea necesario -->
     </select>
   
     <label for="cantidadExtraer">Cantidad a extraer</label>
-    <input id="cantidadExtraer" type="number" bind:value={cantidad_a_registrar} />
+    <input id="cantidadExtraer" type="number" bind:value={mineral.cantidad_a_registrar} />
   
     <label for="unidadMedida">Unidad de medida</label>
-    <select id="unidadMedida" bind:value={unidadMedida}>
+    <select id="unidadMedida" bind:value={mineral.unidadMedida}>
       <option value="Toneladas/Metricas">Toneladas/Metricas</option>
       <!-- Agrega más opciones según sea necesario -->
     </select>
   
     <label for="LugarExtraccion">Lugar de Extraccion</label>
-    <input id="LugarExtraccion" bind:value={lugar_extraccion} />
+    <input id="LugarExtraccion" bind:value={mineral.lugar_extraccion} />
   
     <label for="EmpresaExtractora">Empresa Extractora</label>
-    <input id="EmpresaExtractora" bind:value={empresa_extractora} />
+    <input id="EmpresaExtractora" bind:value={mineral.empresa_extractora} />
 
     <label for="precio">Precio</label>
-    <input id="precio" bind:value={precio} />
+    <input id="precio" bind:value={mineral.precio} />
 
     <button type="submit">Registrar Mineral</button>
   </form>

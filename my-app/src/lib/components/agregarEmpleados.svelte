@@ -35,7 +35,7 @@
           <label for="sueldo">Sueldo</label>
           <input id="sueldo" bind:value={empleados.sueldo} />
     </div>
-    <button type="submit">Registrar empleados</button>
+    <button type="submit">Asignar empleados</button>
   </form>
   
   <style>
