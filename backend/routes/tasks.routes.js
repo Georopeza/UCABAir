@@ -2,7 +2,8 @@ const {Router} = require('express');
 const router= Router();
 const { consultarMineral,consultarMinerales,agregarMineral,eliminarMineral,actualizarMineral,consultarProyecto,consultarProyectos,agregarProyecto,
     eliminarProyecto,actualizarProyecto,consultarEtapa,consultarEtapas,agregarEtapa,eliminarEtapa,actualizarEtapa,consultarActividad,
-    consultarActividades,agregarActividad,eliminarActividad,actualizarActividad
+    consultarActividades,agregarActividad,eliminarActividad,actualizarActividad,consultarRol,consultarRoles,
+    agregarRol,eliminarRol,actualizarRol
 }= require('../controllers/tasks.controllers')
 
 router.get('/minerales',consultarMinerales);
@@ -25,5 +26,10 @@ router.get('/actividad/:id_actividad_organizacion',consultarActividad);
 router.post('/actividad', agregarActividad);
 router.delete('/actividad/:id_actividad_organizacion',eliminarActividad);
 router.put('/actividad/:id_actividad_organizacion',actualizarActividad);
+router.get('/roles',consultarRoles);
+router.get('/rol/:id_rol',consultarRol);
+router.post('/rol', agregarRol);
+router.delete('/rol/:id_rol',eliminarRol);
+router.put('/rol/:id_rol',actualizarRol);
 
 module.exports= router;

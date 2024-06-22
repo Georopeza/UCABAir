@@ -300,6 +300,83 @@ const actualizarActividad= async (req,res, next) => {
         next (error);
     }
 };
+///CRUD ROLES
+const consultarRoles = async (req, res,next) => {
+
+    try {
+        const {} = req.params
+        const todosRoles = await pool.query('SELECT * FROM rol')
+        res.json(todosRoles.rows)
+    
+    } catch (error) {
+        next(error)
+    }
+
+};
+
+const consultarRol = async (req, res,next) => {
+
+    try {
+        const { id_rol} = req.params
+        const result = await pool.query('SELECT * FROM rol WHERE id_rol= $1', [id_rol])
+        if (result.rows.length === 0) return res.status(404).json({ message: 'Rol no registrado' })
+        return res.json(result.rows[0]);
+    } catch (error) {
+        next(error);
+    }
+    
+};
+
+const agregarRol = async (req, res,next) => {
+
+    const {id_rol,ro_nombre} = req.body
+
+    try {
+        const result = await pool.query('INSERT INTO rol (id_rol,ro_nombre) VALUES ($1, $2) RETURNING *', [id_rol,ro_nombre])
+        res.json(result.rows[0]);
+    } catch (error) {
+        next(error)
+    }
+
+};
+
+const eliminarRol= async (req, res,next) => {
+
+    const {id_rol}=req.params;
+  
+    try{
+        const result= await pool.query('DELETE FROM rol WHERE id_rol= $1', [id_rol]);
+        
+        if (result.rowCount===0) return res.status(404).json({
+            message: 'Rol no registrado',
+        });
+        return res.sendStatus(204);
+    } catch (error){
+        next(error);
+    }
+    
+    
+};
+
+const actualizarRol= async (req,res, next) => {
+
+    const {id_rol}= req.params;
+    try {
+        const {ro_nombre} = req.body;
+     
+    const result= await pool.query('UPDATE rol SET ro_nombre= $1 WHERE id_rol=$2',[ro_nombre,id_rol]);
+
+    if (result.rows.lenght===0)
+        return res.status(404).json({
+            message: 'Rol no registrado',
+        });
+    return res.json(result.rows[0]);
+    } catch (error) {
+        next (error);
+    }
+};
+
+
 module.exports = {
    consultarMineral,
    consultarMinerales,
@@ -321,4 +398,9 @@ module.exports = {
    agregarActividad,
    eliminarActividad,
    actualizarActividad,
+   consultarRol,
+   consultarRoles,
+   agregarRol,
+   eliminarRol,
+   actualizarRol
 }
