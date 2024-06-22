@@ -46,11 +46,7 @@
     <label for="capacidadInstalada">Capacidad Instalada</label>
     <input id="capacidadinstalada" bind:value={proveedor.capacidad_instalada} />
   
-    <!-- Agrega más campos según la interfaz Proveedor -->
-    <!-- Ejemplo: teléfono, correo, capacidad instalada -->
-    <a href="/admin/HomeAdmin/proveedores">
-      <button type="submit">Registrar Proveedor</button>
-    </a>
+    <button type="submit">Registrar Proveedor</button>
   </form>
   
   <style>

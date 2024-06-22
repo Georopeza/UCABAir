@@ -61,9 +61,7 @@
     <label for="estatus">Estatus</label>
     <input id="estatus" bind:value={proyecto.estatus} />
 
-  <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto">
     <button type="submit">Registrar Proyecto</button>
-  </a>
   </form>
   
   <style>

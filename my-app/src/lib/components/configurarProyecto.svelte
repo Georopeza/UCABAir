@@ -1,5 +1,4 @@
 <script lang=ts>
-  export let cantidad_etapas;
   const fecha=new Date();
     // Interfaz para representar un dato
     interface Proyecto {
@@ -17,7 +16,7 @@
       ubicacion:'',
       fecha_inicial: fecha.toLocaleDateString(),
       fecha_fin_estimada: fecha.toLocaleDateString(),
-      cantidad_etapas:0
+      cantidad_etapas:10
     };
   
     // Función para manejar el envío del formulario
@@ -47,11 +46,8 @@
 
     <label for="cantidad_etapas">Cantidad Etapas</label>
     <input id="cantidad_etapas" bind:value={proyecto.cantidad_etapas} />
-  
 
-  <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa">
     <button type="submit">Registrar configuracion inicial Proyecto</button>
-  </a>
   </form>
   
   <style>

@@ -32,10 +32,7 @@
         <input id="cantidad_maquinaria" bind:value={maquinaria.cantidad_maquinaria} />
 
     </div>
-
- <!--  <a href="/admin/HomeAdmin/proyectos">
     <button type="submit">Registrar empleados</button>
-  </a> -->
   </form>
   
   <style>
@@ -45,7 +42,6 @@
         flex-direction: row;
     }
  
-
     form {
       max-width: 100%;
       margin: 0 auto;

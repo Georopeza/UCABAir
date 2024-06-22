@@ -21,8 +21,6 @@
       console.log('Registrando dato:', empleados);
     }
   </script>
-  {#if isOpen}
-  <div class="modal">
     <form on:submit|preventDefault={registrarDato}>
       <div class="agregarEmpleado">
 
@@ -38,13 +36,8 @@
           <label for="sueldo">Sueldo</label>
           <input id="sueldo" bind:value={empleados.sueldo} />
     </div>
-  </form>
-</div>
-{/if}
-
-<!--   <a href="/admin/HomeAdmin/proyectos">
     <button type="submit">Registrar empleados</button>
-  </a> -->
+  </form>
   
   <style>
     /* Estilos generales para el formulario */
