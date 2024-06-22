@@ -1,7 +1,6 @@
 <script lang=ts>
     // Interfaz para representar un dato
     const fecha=new Date();
-    export let isOpen=false;
 
     interface Empleados {
       cant_empleados: string;
@@ -36,7 +35,7 @@
           <label for="sueldo">Sueldo</label>
           <input id="sueldo" bind:value={empleados.sueldo} />
     </div>
-    <button type="submit">Registrar empleados</button>
+    <button type="submit">Asignar empleados</button>
   </form>
   
   <style>

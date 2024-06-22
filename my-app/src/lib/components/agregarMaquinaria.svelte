@@ -32,7 +32,7 @@
         <input id="cantidad_maquinaria" bind:value={maquinaria.cantidad_maquinaria} />
 
     </div>
-    <button type="submit">Registrar empleados</button>
+    <button type="submit">Asignar maquinaria</button>
   </form>
   
   <style>

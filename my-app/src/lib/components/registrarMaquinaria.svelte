@@ -1,4 +1,5 @@
 <script lang=ts>
+    export let placa_identificacion;
     // Interfaz para representar un dato
     interface Maquinaria {
       tipo_maquinaria: string;
@@ -16,7 +17,7 @@
     let maquinaria: Maquinaria = {
         tipo_maquinaria:'',
         nombre: '',
-        placa_identificacion: '',
+        placa_identificacion: 'GAV-35X',
         marca: '',
         modelo: '',
         estado: ['Activa','Fuera de Servicio','En Mantenimiento'],

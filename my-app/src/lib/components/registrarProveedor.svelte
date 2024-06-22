@@ -1,4 +1,5 @@
 <script lang=ts>
+    export let rif;
     // Interfaz para representar un proveedor
     interface Proveedor {
       razon_social: string;
@@ -11,7 +12,7 @@
   
     let proveedor: Proveedor = {
       razon_social: '',
-      rif: '',
+      rif: 'J-28192833',
       direccion_fiscal: '',
       telefono: [],
       correo: [],

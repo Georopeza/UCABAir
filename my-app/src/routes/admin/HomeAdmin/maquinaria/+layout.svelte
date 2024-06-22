@@ -90,9 +90,11 @@ function editarRegistro(index: number) {
           <td>{dato.comentario}</td>
           <td>
             <div class="botonesUD">
-              <button on:click={() => editarRegistro(i)}>
-                <span>✏️</span> <!-- Icono de lápiz -->
-              </button>
+              <a href=/admin/HomeAdmin/editar/maquinaria>
+                  <button on:click={() => editarRegistro(i)}>
+                    <span>✏️</span> <!-- Icono de lápiz -->
+                  </button>
+              </a>
               <button on:click={() => eliminarRegistro(i)}>
                 <span>🗑️</span> <!-- Icono de papelera -->
               </button>

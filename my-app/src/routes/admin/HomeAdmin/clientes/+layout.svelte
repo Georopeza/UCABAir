@@ -71,9 +71,11 @@
           <td>{dato.direccion}</td>
           <td>
             <div class="botonesUD">
-              <button on:click={() => editarRegistro(i)}>
-                <span>✏️</span> <!-- Icono de lápiz -->
-              </button>
+              <a href=/admin/HomeAdmin/editar/cliente>
+                  <button on:click={() => editarRegistro(i)}>
+                    <span>✏️</span> <!-- Icono de lápiz -->
+                  </button>
+              </a>
               <button on:click={() => eliminarRegistro(i)}>
                 <span>🗑️</span> <!-- Icono de papelera -->
               </button>

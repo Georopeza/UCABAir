@@ -1,4 +1,5 @@
 <script lang=ts>
+    export let cedula;
     // Interfaz para representar un empleado
     interface Empleado {
       cedula: string;
@@ -10,7 +11,7 @@
     }
   
     let empleado: Empleado = {
-      cedula: '',
+      cedula: 'V-2871812729',
       nombre: [],
       apellido: [],
       telefono: [],
