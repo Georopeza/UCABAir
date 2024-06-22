@@ -54,6 +54,8 @@
     // Lógica para eliminar el registro en 'datos'
     console.log(`Eliminando registro en índice ${index}`);
   }
+
+  
   </script>
   
   <table>

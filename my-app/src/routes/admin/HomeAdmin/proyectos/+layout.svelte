@@ -55,6 +55,18 @@
   }
       // Tus datos aquí
     ];
+
+    function editarRegistro(index: number) {
+    // Lógica para editar el registro en 'datos'
+    console.log(`Editando registro en índice ${index}`);
+  }
+
+  // Función para eliminar un registro
+  function eliminarRegistro(index: number) {
+    // Lógica para eliminar el registro en 'datos'
+    console.log(`Eliminando registro en índice ${index}`);
+  }
+
   </script>
   <table>
     <thead>
@@ -71,7 +83,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each datos as dato}
+      {#each datos as dato, i}
         <tr>
           <td>{dato.mineral}</td>
           <td>{dato.cliente}</td>
@@ -82,6 +94,16 @@
           <td>{dato.fecha_fin_estimada}</td>
           <td>{dato.etapa_actual}</td>
           <td>{dato.estatus}</td>
+          <td>
+            <div class="botonesUD">
+              <button on:click={() => editarRegistro(i)}>
+                <span>✏️</span> <!-- Icono de lápiz -->
+              </button>
+              <button on:click={() => eliminarRegistro(i)}>
+                <span>🗑️</span> <!-- Icono de papelera -->
+              </button>
+            </div>
+            </td>
         </tr>
       {/each}
     </tbody>
@@ -90,6 +112,15 @@
     <button>Registrar Proyecto</button>
   </a>
   <style>
+        .botonesUD{
+      display: flex;
+        background-color:white;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 10px 20px;
+    }
+
       table {
       width: 100%;
       border-collapse: collapse;
