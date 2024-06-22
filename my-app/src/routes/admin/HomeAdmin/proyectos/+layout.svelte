@@ -8,6 +8,7 @@
     let opcionSeleccionada = 'Clientes';
     // Define una interfaz para el tipo de datos que contiene 'datos'
     interface Proyecto {
+      codigo:number;
       mineral: string;
       cliente: string;
       cantidad_a_extraer: string;
@@ -18,9 +19,18 @@
       etapa_actual: string;
       estatus:string;
     }
+    let min=0;
+    let max=100000;
+
+    function getRandomNumber(min:number, max:number) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  let numeroAleatorio = getRandomNumber(1, 100);
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
     let datos: Proyecto[] = [{
+    codigo: getRandomNumber(min,max),
     mineral: 'Hierro',
     cliente: 'Construcciones Metálicas C.A.',
     cantidad_a_extraer: '10000 toneladas',
@@ -32,6 +42,7 @@
     estatus: 'En progreso'
   },
   {
+    codigo: getRandomNumber(min,max),
     mineral: 'Bauxita',
     cliente: 'Aluminios del Caroní S.A.',
     cantidad_a_extraer: '5000 toneladas',
@@ -43,6 +54,7 @@
     estatus: 'Retrasado'
   },
   {
+    codigo: getRandomNumber(min,max),
     mineral: 'Oro',
     cliente: 'Joyerías El Dorado C.A.',
     cantidad_a_extraer: '100 kilogramos',
@@ -71,6 +83,7 @@
   <table>
     <thead>
       <tr>
+        <th>Codigo</th>
         <th>Mineral a Extraer</th>
         <th>Cliente</th>
         <th>Cantidad a Extraer</th>
@@ -85,6 +98,7 @@
     <tbody>
       {#each datos as dato, i}
         <tr>
+          <td>{dato.codigo}</td>
           <td>{dato.mineral}</td>
           <td>{dato.cliente}</td>
           <td>{dato.cantidad_a_extraer}</td>
@@ -96,9 +110,11 @@
           <td>{dato.estatus}</td>
           <td>
             <div class="botonesUD">
-              <button on:click={() => editarRegistro(i)}>
-                <span>✏️</span> <!-- Icono de lápiz -->
-              </button>
+              <a href=/admin/HomeAdmin/registrar/proyecto>
+                  <button on:click={() => editarRegistro(i)}>
+                    <span>✏️</span> <!-- Icono de lápiz -->
+                  </button>
+              </a>
               <button on:click={() => eliminarRegistro(i)}>
                 <span>🗑️</span> <!-- Icono de papelera -->
               </button>

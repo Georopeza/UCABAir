@@ -1,7 +1,6 @@
 <script lang=ts>
     // Interfaz para representar un dato
     const fecha=new Date();
-    export let isOpen=false;
 
     interface Empleados {
       cant_empleados: string;

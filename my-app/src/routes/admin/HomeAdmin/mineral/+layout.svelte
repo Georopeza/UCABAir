@@ -79,14 +79,16 @@
           <td>{dato.medida}</td>
           <td>{dato.Empresa_extractora}</td>
           <td>
-          <div class="botonesUD">
-            <button on:click={() => editarRegistro(i)}>
-              <span>✏️</span> <!-- Icono de lápiz -->
-            </button>
-            <button on:click={() => eliminarRegistro(i)}>
-              <span>🗑️</span> <!-- Icono de papelera -->
-            </button>
-          </div>
+            <div class="botonesUD">
+              <a href=/admin/HomeAdmin/editar/mineral>
+                  <button on:click={() => editarRegistro(i)}>
+                    <span>✏️</span> <!-- Icono de lápiz -->
+                  </button>
+              </a>
+              <button on:click={() => eliminarRegistro(i)}>
+                <span>🗑️</span> <!-- Icono de papelera -->
+              </button>
+            </div>
           </td>
         </tr>
       {/each}
