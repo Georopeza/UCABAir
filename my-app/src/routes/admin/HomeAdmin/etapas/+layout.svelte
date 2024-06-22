@@ -7,18 +7,15 @@
     }
     let opcionSeleccionada = 'Clientes';
     // Define una interfaz para el tipo de datos que contiene 'datos'
-    interface Proyecto {
-      codigo:number;
-      mineral: string;
-      cliente: string;
-      cantidad_a_extraer: string;
+    interface Etapa {
+      nombre_etapa: string;
       costo: string;
-      ubicacion: string;
-      fecha_inicial: string;
-      fecha_fin_estimada: string;
-      etapa_actual: string;
-      estatus:string;
+      fecha_inicio:string;
+      fecha_fin_estimada:string;
+      cant_actividades:number;
     }
+
+
     let min=0;
     let max=100000;
 
@@ -29,41 +26,26 @@
   let numeroAleatorio = getRandomNumber(1, 100);
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
-    let datos: Proyecto[] = [{
-    codigo: getRandomNumber(min,max),
-    mineral: 'Hierro',
-    cliente: 'Construcciones Metálicas C.A.',
-    cantidad_a_extraer: '10000 toneladas',
-    costo: '600000$',
-    ubicacion: 'Cerro Bolívar, Bolívar',
-    fecha_inicial: fecha.toLocaleDateString(),
-    fecha_fin_estimada:fecha.toLocaleDateString() ,
-    etapa_actual: 'Extracción',
-    estatus: 'En progreso'
+  let etapas: Etapa[] = [{
+    nombre_etapa: 'Análisis',
+    costo: '$' + getRandomNumber(min, max),
+    fecha_inicio: fecha.toLocaleDateString(),
+    fecha_fin_estimada: fecha.toLocaleDateString(),
+    cant_actividades: getRandomNumber(1, 10)
   },
   {
-    codigo: getRandomNumber(min,max),
-    mineral: 'Bauxita',
-    cliente: 'Aluminios del Caroní S.A.',
-    cantidad_a_extraer: '5000 toneladas',
-    costo: '250000$',
-    ubicacion: 'Los Pijiguaos, Bolívar',
-    fecha_inicial: fecha.toLocaleDateString(),
+    nombre_etapa: 'Diseño',
+    costo: '$' + getRandomNumber(min, max),
+    fecha_inicio: fecha.toLocaleDateString(),
     fecha_fin_estimada: fecha.toLocaleDateString(),
-    etapa_actual: 'Preparación del terreno',
-    estatus: 'Retrasado'
+    cant_actividades: getRandomNumber(1, 10)
   },
   {
-    codigo: getRandomNumber(min,max),
-    mineral: 'Oro',
-    cliente: 'Joyerías El Dorado C.A.',
-    cantidad_a_extraer: '100 kilogramos',
-    costo: '4800000$',
-    ubicacion: 'El Callao, Bolívar',
-    fecha_inicial: fecha.toLocaleDateString(),
+    nombre_etapa: 'Desarrollo',
+    costo: '$' + getRandomNumber(min, max),
+    fecha_inicio: fecha.toLocaleDateString(),
     fecha_fin_estimada: fecha.toLocaleDateString(),
-    etapa_actual: 'Evaluación ambiental',
-    estatus: 'Pendiente'
+    cant_actividades: getRandomNumber(1, 10)
   }
       // Tus datos aquí
     ];
@@ -83,34 +65,24 @@
   <table>
     <thead>
       <tr>
-        <th>Codigo</th>
-        <th>Mineral a Extraer</th>
-        <th>Cliente</th>
-        <th>Cantidad a Extraer</th>
+        <th>Etapa</th>
         <th>Costo</th>
-        <th>Ubicación</th>
-        <th>Fecha Inicial</th>
+        <th>Fecha Inicio</th>
         <th>Fecha Fin Estimada</th>
-        <th>Etapa Actual</th>
-        <th>Estatus</th>
+        <th>cant_actividades</th>
       </tr>
     </thead>
     <tbody>
-      {#each datos as dato, i}
+      {#each etapas as etapa, i}
         <tr>
-          <td>{dato.codigo}</td>
-          <td>{dato.mineral}</td>
-          <td>{dato.cliente}</td>
-          <td>{dato.cantidad_a_extraer}</td>
-          <td>{dato.costo}</td>
-          <td>{dato.ubicacion}</td>
-          <td>{dato.fecha_inicial}</td>
-          <td>{dato.fecha_fin_estimada}</td>
-          <td>{dato.etapa_actual}</td>
-          <td>{dato.estatus}</td>
+          <td>{etapa.nombre_etapa}</td>
+          <td>{etapa.costo}</td>
+          <td>{etapa.fecha_inicio}</td>
+          <td>{etapa.fecha_fin_estimada}</td>
+          <td>{etapa.cant_actividades}</td>
           <td>
             <div class="botonesUD">
-              <a href=/admin/HomeAdmin/registrar/proyecto>
+              <a href=/admin/HomeAdmin/etapas>
                   <button on:click={() => editarRegistro(i)}>
                     <span>✏️</span> <!-- Icono de lápiz -->
                   </button>
@@ -118,8 +90,8 @@
               <button on:click={() => eliminarRegistro(i)}>
                 <span>🗑️</span> <!-- Icono de papelera -->
               </button>
-              <a href=/admin/HomeAdmin/etapas>
-                <button>Ver Etapas</button>
+              <a href=/admin/HomeAdmin/actividades>
+                <button>Ver Actividades</button>
               </a>
             </div>
             </td>
@@ -127,8 +99,8 @@
       {/each}
     </tbody>
   </table>
-  <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto">
-    <button>Registrar Proyecto</button>
+  <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa">
+    <button>Registrar Etapa</button>
   </a>
   <style>
         .botonesUD{
