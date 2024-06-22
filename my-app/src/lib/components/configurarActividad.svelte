@@ -2,13 +2,13 @@
     // Interfaz para representar un dato
     const fecha=new Date();
 
-    interface Etapa {
+    interface Actividad {
       nombre_actividad: string;
       fecha_inicio:string;
       fecha_fin_estimada:string;
     }
   
-    let etapa: Etapa = {
+    let actividad: Actividad = {
       nombre_actividad: '',
       fecha_inicio: fecha.toLocaleDateString(),
       fecha_fin_estimada:fecha.toLocaleDateString(),
@@ -17,20 +17,20 @@
     // Función para manejar el envío del formulario
     function registrarDato() {
       // Aquí iría la lógica para procesar los datos del formulario
-      console.log('Registrando dato:', etapa);
+      console.log('Registrando dato:', actividad);
     }
   </script>
   
   <form on:submit|preventDefault={registrarDato}>
     <div class="actividad">
         <label for="nombre_actividad">Nombre Actividad</label>
-        <input id="nombre_actividad" bind:value={etapa.nombre_actividad} />
+        <input id="nombre_actividad" bind:value={actividad.nombre_actividad} />
 
         <label for="fecha_inicio">Fecha Inicio</label>
-        <input id="fecha_inicio" bind:value={etapa.fecha_inicio} />
+        <input id="fecha_inicio" bind:value={actividad.fecha_inicio} />
 
         <label for="fecha_fin_estimada">Fecha Fin Estimada</label>
-        <input id="fecha_fin_estimada" bind:value={etapa.fecha_fin_estimada} />
+        <input id="fecha_fin_estimada" bind:value={actividad.fecha_fin_estimada} />
 
     </div>
     <button type="submit">Registrar configuracion Actividad</button>
@@ -42,7 +42,6 @@
         flex-direction: row;
     }
  
-
     form {
       max-width: 100%;
       margin: 0 auto;
