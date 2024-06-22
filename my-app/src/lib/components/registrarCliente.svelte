@@ -46,11 +46,7 @@
     <label for="direccion">Direccion</label>
     <input id="direccion" bind:value={empleado.direccion} />
   
-    <!-- Agrega más campos según la interfaz Empleado -->
-    <!-- Ejemplo: teléfono, correo, área de trabajo, sueldo, especialidad -->
-    <a href="/admin/HomeAdmin/clientes">
-      <button type="submit">Registrar Cliente</button>
-    </a>
+    <button type="submit">Registrar Cliente</button>
   </form>
   
   <style>

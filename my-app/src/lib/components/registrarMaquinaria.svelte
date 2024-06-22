@@ -66,9 +66,7 @@
     <label for="comentario">Comentario</label>
     <input id="comentario" bind:value={maquinaria.comentario} />
 
-  <a href="/admin/HomeAdmin/maquinaria">
     <button type="submit">Registrar Maquinaria</button>
-  </a>
   </form>
   
   <style>

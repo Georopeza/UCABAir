@@ -1,5 +1,4 @@
 <script lang=ts>
-    export let cant_actividades;
     // Interfaz para representar un dato
     const fecha=new Date();
 
@@ -14,15 +13,13 @@
     let etapa: Etapa = {
       nombre_etapa: '',
       costo: '',
-      fecha_inicio: fecha.toLocaleDateString(),
-      fecha_fin_estimada:fecha.toLocaleDateString(),
-      cant_actividades:0
+      fecha_inicio:'',
+      fecha_fin_estimada:'',
+      cant_actividades:1
     };
-  
     // Función para manejar el envío del formulario
     function registrarDato() {
       // Aquí iría la lógica para procesar los datos del formulario
-      console.log('Registrando dato:', etapa);
     }
   </script>
   
@@ -42,10 +39,7 @@
       <label for="cant_actividades ">Cantidad Actividades</label>
       <input id="cant_actividades" bind:value={etapa.cant_actividades} />
     </div>
-
-   <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad">
     <button type="submit">Registrar configuracion Etapa</button>
-  </a>
   </form>
   
   <style>

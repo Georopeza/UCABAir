@@ -48,9 +48,7 @@
 
   <!-- Agrega más campos según la interfaz Proveedor -->
   <!-- Ejemplo: teléfono, correo, capacidad instalada -->
-  <a href="/admin/HomeAdmin/aliados">
-    <button type="submit">Registrar Aliados</button>
-  </a>
+  <button type="submit">Registrar Aliados</button>
 </form>
 
 <style>

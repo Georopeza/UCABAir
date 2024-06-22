@@ -56,11 +56,7 @@
     <label for="especialidad">Especialidad</label>
     <input id="especialidad" bind:value={empleado.especialidad} />
   
-    <!-- Agrega más campos según la interfaz Empleado -->
-    <!-- Ejemplo: teléfono, correo, área de trabajo, sueldo, especialidad -->
-    <a href="/admin/HomeAdmin/empleado">
-      <button type="submit">Registrar Empleado</button>
-    </a>
+    <button type="submit">Registrar Empleado</button>
   </form>
   
   <style>

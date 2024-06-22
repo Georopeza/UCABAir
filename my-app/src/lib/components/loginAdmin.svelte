@@ -1,6 +1,6 @@
-<script>
+<script lang=ts>
 import { goto } from '$app/navigation';
-    async function handleSubmit(event) {
+    async function handleSubmit(event:Event) {
     event.preventDefault();
     // Aquí iría la lógica para verificar las credenciales de inicio de sesión
     // Si las credenciales son correctas, redirige al usuario
@@ -11,8 +11,8 @@ import { goto } from '$app/navigation';
 
 </script>
     <div class="cajaInicioSesion">
-        <a>Ingrese con sus credenciales de inicio de sesion</a>
         <div class="cajaborde">
+            <h2>Ingrese con sus credenciales de inicio de sesion</h2>
             <form on:submit={handleSubmit} class='cajachica'>
                 <label class='palabras' style="margin-top: 5%;" for='username'>Correo Electronico:</label>
                 <input class='palabras' id='username' name='username' type='text' placeholder="Usuario"/>

@@ -33,12 +33,8 @@
         <input id="fecha_fin_estimada" bind:value={etapa.fecha_fin_estimada} />
 
     </div>
-
-<!--   <a href="/admin/HomeAdmin/proyectos">
     <button type="submit">Registrar configuracion Actividad</button>
-  </a> -->
   </form>
-  
   <style>
     /* Estilos generales para el formulario */
      .actividad{
