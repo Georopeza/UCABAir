@@ -150,7 +150,7 @@
         </tr>
       {/each}
     </tbody>
-    <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad">
+    <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad/asignarEmpleado">
       <button>Asignar Empleado</button>
     </a>
   </table>
@@ -181,7 +181,7 @@
         </tr>
       {/each}
     </tbody>
-    <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad">
+    <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad/asignarMaquinaria">
       <button>Asignar Maquinaria</button>
     </a>
   </table>

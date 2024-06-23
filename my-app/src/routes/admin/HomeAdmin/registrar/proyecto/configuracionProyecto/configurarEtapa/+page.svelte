@@ -10,7 +10,7 @@
         <h2>Configuracion Etapa</h2>
             <ConfigurarEtapa/>
                 <div class="botones">
-                    <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad">
+                    <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad/asignarEmpleado">
                         <button>Configurar Actividades</button>
                     </a>
                     <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa">

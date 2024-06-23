@@ -96,7 +96,10 @@
   </table>
   <a href="/admin/HomeAdmin/registrar/mineral">
     <button>Registrar Mineral</button>
-</a>
+  </a>
+  <a href="/admin/HomeAdmin/reponerInventario">
+    <button>Reponer Inventario</button>
+  </a>
   <style>
 
     .botonesUD{
