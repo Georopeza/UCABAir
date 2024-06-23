@@ -62,6 +62,7 @@
   }
 
   </script>
+  <h2>Etapas</h2>
   <table>
     <thead>
       <tr>

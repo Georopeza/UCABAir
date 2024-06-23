@@ -12,15 +12,15 @@
       especialidad: string;
     }
   
-    let empleado: Empleado = {
-      cedula: 'V-2817811',
-      nombre: [],
-      apellido: [],
-      telefono: [],
-      correo: [],
-      area_trabajo: '',
-      sueldo: '',
-      especialidad: '',
+  let empleado: Empleado = {
+          cedula: 'V-2817811',
+          nombre: [],
+          apellido: [],
+          telefono: [],
+          correo: [],
+          area_trabajo: '',
+          sueldo: '',
+          especialidad: '',
     };
   
     // Función para manejar el envío del formulario

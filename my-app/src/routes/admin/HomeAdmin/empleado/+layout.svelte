@@ -19,38 +19,38 @@
     }
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
-    let datos: Empleado[] = [{
-    cedula: 'V-12345678',
-    nombres: 'Juan',
-    apellidos: 'Pérez',
-    telefono: ['+58-212-1234567', '+58-412-7654321'],
-    correo: ['juan.perez@example.com', 'jperez@workemail.com'],
-    area_trabajo: 'Ingeniería',
-    sueldo: '2500$',
-    especialidad: 'Desarrollo de Software',
-    rol:'empleado'
+    let empleados: Empleado[] = [{
+      cedula: 'V-12345678',
+      nombres: 'Juan',
+      apellidos: 'Pérez',
+      telefono: ['+58-212-1234567', '+58-412-7654321'],
+      correo: ['juan.perez@example.com', 'jperez@workemail.com'],
+      area_trabajo: 'Ingeniería',
+      sueldo: '2500$',
+      especialidad: 'Desarrollo de Software',
+      rol:'empleado'
   },
   {
-    cedula: 'E-87654321',
-    nombres: 'María',
-    apellidos: 'González',
-    telefono: ['+58-212-7654321', '+58-416-1234567'],
-    correo: ['maria.gonzalez@example.com', 'mgonzalez@workemail.com'],
-    area_trabajo: 'Recursos Humanos',
-    sueldo: '2000$',
-    especialidad: 'Gestión del Talento',
-    rol:'empleado'
+      cedula: 'E-87654321',
+      nombres: 'María',
+      apellidos: 'González',
+      telefono: ['+58-212-7654321', '+58-416-1234567'],
+      correo: ['maria.gonzalez@example.com', 'mgonzalez@workemail.com'],
+      area_trabajo: 'Recursos Humanos',
+      sueldo: '2000$',
+      especialidad: 'Gestión del Talento',
+      rol:'empleado'
   },
   {
-    cedula: 'V-12344321',
-    nombres: 'Carlos',
-    apellidos: 'Martínez',
-    telefono: ['+58-212-9876543', '+58-414-6543210'],
-    correo: ['carlos.martinez@example.com', 'cmartinez@workemail.com'],
-    area_trabajo: 'Marketing',
-    sueldo: '2200$',
-    especialidad: 'Estrategia Digital',
-    rol:'admin'
+      cedula: 'V-12344321',
+      nombres: 'Carlos',
+      apellidos: 'Martínez',
+      telefono: ['+58-212-9876543', '+58-414-6543210'],
+      correo: ['carlos.martinez@example.com', 'cmartinez@workemail.com'],
+      area_trabajo: 'Marketing',
+      sueldo: '2200$',
+      especialidad: 'Estrategia Digital',
+      rol:'admin'
   }
       // Tus datos aquí
     ];
@@ -67,6 +67,7 @@
   }
 
   </script>
+  <h2>Empleados</h2>
   <table>
     <thead>
       <tr>
@@ -82,7 +83,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each datos as dato, i}
+      {#each empleados as dato, i}
         <tr>
           <td>{dato.cedula}</td>
           <td>{dato.nombres}</td>

@@ -16,15 +16,15 @@
   ];
 </script>
     <div class="ModuloAdministracion">
-        <div class="ModuloAdministracionHeader">
-            <div class="icono">
-                <img src="/src/images/icono.png" alt="minerucab Logo">
+            <div class="ModuloAdministracionHeader">
+                <div class="icono">
+                    <img src="/src/images/icono.png" alt="minerucab Logo">
+                </div>
+                <div class="flecha">
+                    <img src="/src/images/flecha.png" alt="flecha">
+                </div>
+                <h2>Modulo de Administración</h2>
             </div>
-            <div class="flecha">
-                <img src="/src/images/flecha.png" alt="flecha">
-            </div>
-            <h2>Modulo de Administración</h2>
-        </div>
         <div class=CategoriasyContenido>
             <div class="categorias">
                 <h2>Administrar</h2>    
@@ -38,14 +38,14 @@
             </div>
             <div class="Contenido">
                 <div class="title">{opcionSeleccionada}</div>
-                <div class="search-bar">
+                    <div class="search-bar">
                         <input class="search-input" type="text" placeholder="Escribe aquí..." bind:value={searchTerm}/>
                         <button class="search-button" on:click={search}>Buscar</button>
-                </div>
+                    </div>
                 <slot/>
-                </div>
             </div>
-</div>
+        </div>
+    </div>
 <style>
 
 .Contenido{

@@ -16,7 +16,7 @@
     }
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
-    let datos: Mineral[] = [{
+    let minerales: Mineral[] = [{
     mineral: 'Oro',
     tipo_mineral: 'Metal precioso',
     origen: 'El Callao, Bolívar',
@@ -57,7 +57,7 @@
 
   
   </script>
-  
+  <h2>Minerales</h2>
   <table>
     <thead>
       <tr>
@@ -70,7 +70,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each datos as dato, i}
+      {#each minerales as dato, i}
         <tr>
           <td>{dato.mineral}</td>
           <td>{dato.tipo_mineral}</td>

@@ -65,11 +65,11 @@
     <tbody>
       {#each actividades as actividad, i}
         <tr>
-          <td>{actividad.nombre_actividad}<td>
-          <td>{actividad.fecha_inicio}<td>
+          <td>{actividad.nombre_actividad}</td>
+          <td>{actividad.fecha_inicio}</td>
           <td>{actividad.fecha_fin_estimada}</td>
           <div class="botonesUD">
-              <a href=/admin/HomeAdmin/actividades>
+              <a href=/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad>
                 <button on:click={() => editarRegistro(i)}>
                   <span>✏️</span> <!-- Icono de lápiz -->
                 </button>
@@ -77,7 +77,7 @@
                 <button on:click={() => eliminarRegistro(i)}>
                   <span>🗑️</span> <!-- Icono de papelera -->
                 </button>
-              <a href=/admin/HomeAdmin/etapas>
+              <a href=/admin/HomeAdmin/recursos>
                 <button>Ver Recursos</button>
               </a>
             </div>

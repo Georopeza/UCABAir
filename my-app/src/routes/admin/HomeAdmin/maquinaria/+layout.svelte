@@ -59,7 +59,7 @@ function editarRegistro(index: number) {
     console.log(`Eliminando registro en índice ${index}`);
   }
   </script>
-  
+  <h2>Maquinaria</h2>
   <table>
     <thead>
       <tr>
