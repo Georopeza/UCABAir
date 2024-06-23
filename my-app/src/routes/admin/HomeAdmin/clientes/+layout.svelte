@@ -49,6 +49,7 @@
     console.log(`Eliminando registro en índice ${index}`);
   }
   </script>
+  <h2>Clientes</h2>
   <table>
     <thead>
       <tr>

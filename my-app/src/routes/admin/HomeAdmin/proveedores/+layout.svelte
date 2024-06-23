@@ -52,7 +52,7 @@
     console.log(`Eliminando registro en índice ${index}`);
   }
   </script>
-  
+  <h2>Proveedores</h2>
   <table>
     <thead>
       <tr>

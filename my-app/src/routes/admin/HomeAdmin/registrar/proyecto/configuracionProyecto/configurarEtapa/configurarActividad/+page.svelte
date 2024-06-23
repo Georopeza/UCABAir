@@ -7,8 +7,7 @@
 
 <body>
     <div class="ConfigurarActividad">
-        <!-- <ConfigurarEtapa bind:cant_actividades={cant_actividades}/> -->
-        <h2>Configuracion Actividad <!-- {cant_actividades} --></h2>
+        <h2>Configuracion Actividad</h2>
             <ConfigurarActividad/>
                 <div class="AgregarEmpleados">
                     <AgregarEmpleados/>
@@ -17,8 +16,11 @@
                     <AgregarMaquinaria/>
                 </div>
                 <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad">
-                    <button type="submit">Continuar</button>
-                </a>       
+                    <button>Agregar Otra Actividad</button>
+                </a>    
+                <a href="/admin/HomeAdmin/proyectos">
+                    <button>Terminado</button>
+                </a>   
     </div>  
 </body>
 

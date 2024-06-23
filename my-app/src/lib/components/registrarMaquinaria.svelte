@@ -14,17 +14,17 @@
       comentario:string;
     }
   
-    let maquinaria: Maquinaria = {
-        tipo_maquinaria:'',
-        nombre: '',
-        placa_identificacion: 'GAV-35X',
-        marca: '',
-        modelo: '',
-        estado: ['Activa','Fuera de Servicio','En Mantenimiento'],
-        fecha_adquisicion: new Date() ,
-        ubicacion: '',
-        valor: '',
-        comentario:'',
+    export let maquinaria: Maquinaria = {
+            tipo_maquinaria:'',
+            nombre: '',
+            placa_identificacion: 'GAV-35X',
+            marca: '',
+            modelo: '',
+            estado: ['Activa','Fuera de Servicio','En Mantenimiento'],
+            fecha_adquisicion: new Date() ,
+            ubicacion: '',
+            valor: '',
+            comentario:'',
     };
   
     // Función para manejar el envío del formulario

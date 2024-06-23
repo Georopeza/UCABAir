@@ -80,6 +80,7 @@
   }
 
   </script>
+  <h2>Proyectos</h2>
   <table>
     <thead>
       <tr>

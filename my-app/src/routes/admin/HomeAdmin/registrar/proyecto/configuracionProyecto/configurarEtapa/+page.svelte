@@ -9,13 +9,22 @@
     <div class="ConfigurarEtapa">
         <h2>Configuracion Etapa</h2>
             <ConfigurarEtapa/>
-            <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad">
-                <button>Configurar Actividades</button>
-            </a>  
+                <div class="botones">
+                    <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad">
+                        <button>Configurar Actividades</button>
+                    </a>
+                    <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa">
+                        <button>Agregar Etapa</button>
+                    </a>
+                </div>       
     </div>    
 </body>
 <style>
-    
+
+.botones{
+    display: flex;
+}
+
 button {
     background-color: #050505;
     justify-content: center;
