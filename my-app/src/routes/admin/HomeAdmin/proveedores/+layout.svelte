@@ -91,7 +91,7 @@
   </table>
   <a href="/admin/HomeAdmin/registrar/proveedor">
     <button>Registrar Proveedor</button>
-</a>
+  </a>
   <style>
         .botonesUD{
       display: flex;

@@ -107,7 +107,8 @@ function editarRegistro(index: number) {
   <a href="/admin/HomeAdmin/registrar/maquinaria">
     <button>Registrar Maquinaria</button>
   </a>
-  
+  <button on:click={() => generarReporte(maquinarias)}>Generar Reporte
+  </button>
   <style>
         .botonesUD{
       display: flex;

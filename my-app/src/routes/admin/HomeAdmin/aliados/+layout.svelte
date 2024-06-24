@@ -5,7 +5,7 @@
     console.log(`Buscando: ${searchTerm}`); 
     }
     let opcionSeleccionada = 'Proveedor';
-    interface Proveedor {
+    interface Aliado {
       razon_social: string;
       rif: string;
       direccion_fiscal: string;
@@ -14,7 +14,7 @@
       capacidad_instalada: string;
     }
   
-    let datos: Proveedor[] = [{
+    let aliados: Aliado[] = [{
     razon_social: 'Industrias Metalmecánicas Orinoco C.A.',
     rif: 'J-30584623-7',
     direccion_fiscal: 'Zona Industrial Matanzas, Puerto Ordaz, Bolívar',
@@ -41,7 +41,11 @@
       // Tus datos aquí
     ];
 
-    function editarRegistro(index: number) {
+    async function generarReporte( aliados:Aliado[]) {
+      //logica para generar reporte
+  }
+
+  function editarRegistro(index: number) {
     // Lógica para editar el registro en 'datos'
     console.log(`Editando registro en índice ${index}`);
   }
@@ -65,14 +69,14 @@
       </tr>
     </thead>
     <tbody>
-      {#each datos as dato, i}
+      {#each aliados as aliado, i}
         <tr>
-            <td>{dato.razon_social}</td>
-            <td>{dato.rif}</td>
-            <td>{dato.direccion_fiscal}</td>
-            <td>{dato.telefono}</td>
-            <td>{dato.correo}</td>
-            <td>{dato.capacidad_instalada}</td>
+            <td>{aliado.razon_social}</td>
+            <td>{aliado.rif}</td>
+            <td>{aliado.direccion_fiscal}</td>
+            <td>{aliado.telefono}</td>
+            <td>{aliado.correo}</td>
+            <td>{aliado.capacidad_instalada}</td>
             <td>
               <div class="botonesUD">
                 <a href=/admin/HomeAdmin/editar/aliado>
@@ -91,7 +95,9 @@
   </table>
   <a href="/admin/HomeAdmin/registrar/aliado">
     <button>Registrar Aliado</button>
-</a>
+  </a>
+  <button on:click={() => generarReporte(aliados)}>Generar Reporte
+  </button>
   <style>
 
 .botonesUD{

@@ -1,9 +1,10 @@
 <script lang="ts">
+  import {navigate}  from 'svelte-spa-router';
     let searchTerm = '';
   function search() {
-    // Lógica de búsqueda
-    console.log(`Buscando: ${searchTerm}`); 
-    }
+      // Lógica de búsqueda
+      console.log(`Buscando: ${searchTerm}`); 
+  }
     let opcionSeleccionada = 'Mineral';
     // Define una interfaz para el tipo de datos que contiene 'datos'
     interface Mineral{
@@ -16,31 +17,49 @@
       mi_peso:string;
   }
   
-  let minerales: Mineral[] = [];
+export let minerales: Mineral[] = [];
+
+  async function generarReporte( minerales:Mineral[]) {
+      //logica para generar reporte
+  }
 
   async function mostrarDatos() {
     
-      const response = await fetch('http://localhost:4000/minerales');
-      const data: Mineral[] = await response.json();
-      minerales = data;
+    const response = await fetch('http://localhost:4000/minerales');
+    const data: Mineral[] = await response.json();
+    minerales = data;
     
   }
 
-  mostrarDatos(); //
+  mostrarDatos();
+   //
       // Función para editar un registro
-  async function editarRegistro(minerales:Mineral) {
-    const res = await fetch(`http://localhost:4000/mineral/${minerales.id_mineral}`, {
-            method: 'PUT',
-            body: JSON.stringify(minerales),
-            headers: { 'Content-Type': 'application/json' },
-        });
-        const data = await res.json();
-  }
+    async function editarRegistro(minerales) {
+      try {
+          const res = await fetch(`http://localhost:4000/mineral/${minerales.id_mineral}`, {
+          method: 'PUT',
+          body: JSON.stringify(minerales),
+          headers: { 'Content-Type': 'application/json' },
+          });
+
+          if (res.ok) {
+            // Si la solicitud fue exitosa, redirige al usuario
+            navigate('/admin/HomeAdmin/minerales'); // Ajusta la ruta según tu estructura
+          }else {
+            console.error('Error al actualizar el mineral:', res.status);
+          // Maneja el error (por ejemplo, muestra un mensaje de error al usuario)
+          }
+        }catch (error) {
+          console.error('Error en la solicitud:', error);
+          // Maneja el error (por ejemplo, muestra un mensaje de error al usuario)
+        }
+    }
+
 
   // Función para eliminar un registro
   async function eliminarRegistro(minerales: Mineral) {
-     await fetch(`http://localhost:4000/mineral/${minerales.id_mineral}`,{
-    method: "DELETE"})
+      await fetch(`http://localhost:4000/mineral/${minerales.id_mineral}`,{
+      method: "DELETE"})
 
   }
 
@@ -89,6 +108,8 @@
   <a href="/admin/HomeAdmin/reponerInventario">
     <button>Reponer Inventario</button>
   </a>
+  <button on:click={() => generarReporte(minerales)}>Generar Reporte
+  </button>
   <style>
 
     .botonesUD{

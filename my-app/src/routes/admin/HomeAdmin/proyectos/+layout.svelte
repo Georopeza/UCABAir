@@ -9,14 +9,14 @@
     // Define una interfaz para el tipo de datos que contiene 'datos'
     interface Proyecto {
       codigo:number;
-      mineral: string;
-      cliente: string;
+      mineral: string; //se puede obtener de otra tabla
+      cliente: string;  //se puede obtener de otra tabla
       cantidad_a_extraer: string;
       costo: string;
-      ubicacion: string;
+      ubicacion: string;  //se puede obtener de otra tabla
       fecha_inicial: string;
       fecha_fin_estimada: string;
-      etapa_actual: string;
+      etapa_actual: string; //se puede obtener de otra tabla
       estatus:string;
     }
     let min=0;
@@ -29,7 +29,7 @@
   let numeroAleatorio = getRandomNumber(1, 100);
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
-    let datos: Proyecto[] = [{
+    let proyectos: Proyecto[] = [{
     codigo: getRandomNumber(min,max),
     mineral: 'Hierro',
     cliente: 'Construcciones Metálicas C.A.',
@@ -79,6 +79,10 @@
     console.log(`Eliminando registro en índice ${index}`);
   }
 
+  async function generarReporte( proyectos:Proyecto[]) {
+      //logica para generar reporte ()
+  }
+
   </script>
   <h2>Proyectos</h2>
   <table>
@@ -97,18 +101,18 @@
       </tr>
     </thead>
     <tbody>
-      {#each datos as dato, i}
+      {#each proyectos as proyecto, i}
         <tr>
-          <td>{dato.codigo}</td>
-          <td>{dato.mineral}</td>
-          <td>{dato.cliente}</td>
-          <td>{dato.cantidad_a_extraer}</td>
-          <td>{dato.costo}</td>
-          <td>{dato.ubicacion}</td>
-          <td>{dato.fecha_inicial}</td>
-          <td>{dato.fecha_fin_estimada}</td>
-          <td>{dato.etapa_actual}</td>
-          <td>{dato.estatus}</td>
+          <td>{proyecto.codigo}</td>
+          <td>{proyecto.mineral}</td>
+          <td>{proyecto.cliente}</td>
+          <td>{proyecto.cantidad_a_extraer}</td>
+          <td>{proyecto.costo}</td>
+          <td>{proyecto.ubicacion}</td>
+          <td>{proyecto.fecha_inicial}</td>
+          <td>{proyecto.fecha_fin_estimada}</td>
+          <td>{proyecto.etapa_actual}</td>
+          <td>{proyecto.estatus}</td>
           <td>
             <div class="botonesUD">
               <a href=/admin/HomeAdmin/registrar/proyecto>
@@ -131,6 +135,8 @@
   <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto">
     <button>Registrar Proyecto</button>
   </a>
+  <button on:click={() => generarReporte(proyectos)}>Generar Reporte
+  </button>
   <style>
         .botonesUD{
       display: flex;

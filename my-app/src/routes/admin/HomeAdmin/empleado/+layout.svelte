@@ -112,7 +112,7 @@
   </table>
   <a href="/admin/HomeAdmin/registrar/empleado">
     <button>Registrar Empleado</button>
-</a>
+  </a>
   <style>
     .botonesUD{
       display: flex;
