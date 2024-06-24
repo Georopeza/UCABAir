@@ -59,7 +59,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each minerales as dato,minerales}
+      {#each minerales as dato}
         <tr>
           <td>{dato.mi_nombre}</td>
           <td>{dato.mi_tipo}</td>
@@ -70,11 +70,11 @@
           <td>
             <div class="botonesUD">
               <a href=/admin/HomeAdmin/editar/mineral>
-                  <button on:click={() => editarRegistro(i)}>
+                  <button on:click={() => editarRegistro(dato)}>
                     <span>✏️</span> <!-- Icono de lápiz -->
                   </button>
               </a>
-              <button on:click={() => eliminarRegistro(minerales.id_mineral)}>
+              <button on:click={() => eliminarRegistro(dato)}>
                 <span>🗑️</span> <!-- Icono de papelera -->
               </button>
             </div>
