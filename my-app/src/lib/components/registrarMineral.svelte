@@ -1,67 +1,69 @@
 <script lang=ts>
-    export let idProducto='9182921';
+
+
     interface Mineral{
-      idProducto:number;
-      nombreMineral:string;
-      tipoMineral:string[]; // Valor predeterminado
-      cantidad_a_registrar:number;
-      unidadMedida:string; // Valor predeterminado
-      lugar_extraccion:string;
-      empresa_extractora:string;
-      precio:number;
+      id_mineral:string;
+      mi_nombre:string;
+      mi_tipo:string; // Valor predeterminado
+      mi_utilizacion:string;
+      mi_dureza:string;
+      mi_maleabilidad:string;
+      mi_peso:string;
   }
 
     let mineral: Mineral = {
-      idProducto:182918,
-      nombreMineral: 'Cuarzo',
-      tipoMineral: ['Metalico', 'No Metalico'],
-      cantidad_a_registrar: 100,
-      unidadMedida: 'Toneladas',
-      lugar_extraccion: 'Mina de cuarzo de Brasil',
-      empresa_extractora: 'Minerales S.A.',
-      precio: 1000
+      id_mineral:'',
+      mi_nombre: '',
+      mi_tipo: '',
+      mi_utilizacion: '',
+      mi_dureza: '',
+      mi_maleabilidad: '',
+      mi_peso: ''
     };
   
     // Función para manejar el envío del formulario
-    function registrarMineral() {
+    async function registrarMineral() {
+      
+      const res = await fetch(`http://localhost:4000/mineral`, {
+            method: 'POST',
+            body: JSON.stringify(mineral),
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        const data = await res.json();
+        console.log(data)
       // Aquí iría la lógica para procesar los datos del formulario
-      console.log('Registrando mineral:', { mineral });
+   
     }
   </script>
   
   <form on:submit|preventDefault={registrarMineral}>
     <h2>Registrar Mineral</h2>
     
-    <label for="idProducto">ID de Producto</label>
-    <input id="idProducto" bind:value={mineral.idProducto} />
+    <label for="id_mineral">ID de Mineral</label>
+    <input id="id_mineral" bind:value={mineral.id_mineral} />
   
     <label for="nombreMineral">Nombre del Mineral</label>
-    <input id="nombreMineral" bind:value={mineral.nombreMineral} />
+    <input id="nombreMineral" bind:value={mineral.mi_nombre} />
   
     <label for="tipoMineral">Tipo de mineral</label>
-    <select id="tipoMineral" bind:value={mineral.tipoMineral}>
-      <option value="Metálico">Metálico</option>
-      <option value="No Metálico">No Metálico</option>
+    <select id="tipoMineral" bind:value={mineral.mi_tipo}>
+      <option value="metalico">metalico</option>
+      <option value="no metalico">no metalico</option>
       <!-- Agrega más opciones según sea necesario -->
     </select>
+    
+    <label for="Utilizacion">Utilizacion del mineral</label>
+    <input id="Utilizacion"  bind:value={mineral.mi_utilizacion} />
   
-    <label for="cantidadExtraer">Cantidad a extraer</label>
-    <input id="cantidadExtraer" type="number" bind:value={mineral.cantidad_a_registrar} />
+    <label for="Dureza">Dureza</label>
+    <input id="Dureza" bind:value={mineral.mi_dureza}/>
+      
+    <label for="Maleabilidad">maleabilidad</label>
+    <input id="Maleabilidad" bind:value={mineral.mi_maleabilidad} />
   
-    <label for="unidadMedida">Unidad de medida</label>
-    <select id="unidadMedida" bind:value={mineral.unidadMedida}>
-      <option value="Toneladas/Metricas">Toneladas/Metricas</option>
-      <!-- Agrega más opciones según sea necesario -->
-    </select>
-  
-    <label for="LugarExtraccion">Lugar de Extraccion</label>
-    <input id="LugarExtraccion" bind:value={mineral.lugar_extraccion} />
-  
-    <label for="EmpresaExtractora">Empresa Extractora</label>
-    <input id="EmpresaExtractora" bind:value={mineral.empresa_extractora} />
-
-    <label for="precio">Precio</label>
-    <input id="precio" bind:value={mineral.precio} />
+    <label for="Peso">peso</label>
+    <input id="Peso" bind:value={mineral.mi_peso} />
 
     <button type="submit">Registrar Mineral</button>
   </form>

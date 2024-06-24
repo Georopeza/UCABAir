@@ -6,53 +6,42 @@
     }
     let opcionSeleccionada = 'Mineral';
     // Define una interfaz para el tipo de datos que contiene 'datos'
-    interface Mineral {
-      mineral: string;
-      tipo_mineral: string;
-      origen: string;
-      precio_x_unidad: string;
-      medida: string;
-      Empresa_extractora: string[];
-    }
-  
-    // Ahora declara 'datos' con el tipo explícito 'Dato[]'
-    let minerales: Mineral[] = [{
-    mineral: 'Oro',
-    tipo_mineral: 'Metal precioso',
-    origen: 'El Callao, Bolívar',
-    precio_x_unidad: '58$',
-    medida: 'gramo',
-    Empresa_extractora: ['Minera Goldex', 'Corpomin']
-  },
-  {
-    mineral: 'Diamante',
-    tipo_mineral: 'Gema',
-    origen: 'Guarico',
-    precio_x_unidad: '1500$',
-    medida: 'quilate',
-    Empresa_extractora: ['Diamantes del Orinoco', 'Gemstones Corp']
-  },
-  {
-    mineral: 'Cobre',
-    tipo_mineral: 'Metal básico',
-    origen: 'Táchira',
-    precio_x_unidad: '0.75$',
-    medida: 'kilogramo',
-    Empresa_extractora: ['Cobre Andino', 'Metales del Táchira']
+    interface Mineral{
+      id_mineral:number;
+      mi_nombre:string;
+      mi_tipo:string; // Valor predeterminado
+      mi_utilizacion:string;
+      mi_dureza:string;
+      mi_maleabilidad:string;
+      mi_peso:string;
   }
-      // Tus datos aquí
-    ];
+  
+  let minerales: Mineral[] = [];
 
+  async function mostrarDatos() {
+    
+      const response = await fetch('http://localhost:4000/minerales');
+      const data: Mineral[] = await response.json();
+      minerales = data;
+    
+  }
+
+  mostrarDatos(); //
       // Función para editar un registro
-  function editarRegistro(index: number) {
-    // Lógica para editar el registro en 'datos'
-    console.log(`Editando registro en índice ${index}`);
+  async function editarRegistro(minerales:Mineral) {
+    const res = await fetch(`http://localhost:4000/mineral/${minerales.id_mineral}`, {
+            method: 'PUT',
+            body: JSON.stringify(minerales),
+            headers: { 'Content-Type': 'application/json' },
+        });
+        const data = await res.json();
   }
 
   // Función para eliminar un registro
-  function eliminarRegistro(index: number) {
-    // Lógica para eliminar el registro en 'datos'
-    console.log(`Eliminando registro en índice ${index}`);
+  async function eliminarRegistro(minerales: Mineral) {
+     await fetch(`http://localhost:4000/mineral/${minerales.id_mineral}`,{
+    method: "DELETE"})
+
   }
 
   
@@ -63,21 +52,21 @@
       <tr>
         <th>Mineral</th>
         <th>Tipo de mineral</th>
-        <th>Origen</th>
-        <th>Precio por unidad</th>
-        <th>Medida</th>
-        <th>Empresa extractora</th>
+        <th>Utilizacion</th>
+        <th>Dureza</th>
+        <th>Maleabilidad</th>
+        <th>Peso</th>
       </tr>
     </thead>
     <tbody>
-      {#each minerales as dato, i}
+      {#each minerales as dato,minerales}
         <tr>
-          <td>{dato.mineral}</td>
-          <td>{dato.tipo_mineral}</td>
-          <td>{dato.origen}</td>
-          <td>{dato.precio_x_unidad}</td>
-          <td>{dato.medida}</td>
-          <td>{dato.Empresa_extractora}</td>
+          <td>{dato.mi_nombre}</td>
+          <td>{dato.mi_tipo}</td>
+          <td>{dato.mi_utilizacion}</td>
+          <td>{dato.mi_dureza}</td>
+          <td>{dato.mi_maleabilidad}</td>
+          <td>{dato.mi_peso}</td>
           <td>
             <div class="botonesUD">
               <a href=/admin/HomeAdmin/editar/mineral>
@@ -85,7 +74,7 @@
                     <span>✏️</span> <!-- Icono de lápiz -->
                   </button>
               </a>
-              <button on:click={() => eliminarRegistro(i)}>
+              <button on:click={() => eliminarRegistro(minerales.id_mineral)}>
                 <span>🗑️</span> <!-- Icono de papelera -->
               </button>
             </div>
