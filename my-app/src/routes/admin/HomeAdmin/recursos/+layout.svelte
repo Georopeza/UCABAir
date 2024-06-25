@@ -125,6 +125,7 @@
 <div class="tablas">  
   <table>
     <thead>
+      <h2>Empleados</h2>
       <tr>
         <th>Nombre Empleado</th>
         <th>Area De Trabajo</th>
@@ -156,6 +157,7 @@
   </table>
   <table>
     <thead>
+      <h2>Maquinaria</h2>
       <tr>
         <th>Tipo Maquinaria</th>
         <th>Marca</th>

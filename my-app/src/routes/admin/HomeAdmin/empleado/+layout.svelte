@@ -113,6 +113,9 @@
   <a href="/admin/HomeAdmin/registrar/empleado">
     <button>Registrar Empleado</button>
   </a>
+  <a href="/admin/HomeAdmin/reponerInventario/solicitarPersonal">
+    <button>Solicitar Personal</button>
+  </a>
   <style>
     .botonesUD{
       display: flex;

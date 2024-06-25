@@ -1,26 +1,21 @@
 <script lang=ts>
-    import Combobox from "./combobox.svelte";
+    //import Combobox from "./combobox.svelte";
     import { goto } from "$app/navigation";
-
     const fecha=new Date();
       // Interfaz para representar un dato
-    interface Solicitud_Compra {
-        mineral: string;
-        cantidad_a_solicitar: string;
-        fecha_solicitud: Date;
-        fecha_entrega: Date;
+    interface Solicitud_Maquinaria {
+      tipo_maquinaria: string[];
+      marca: string;
+      modelo: string;
     }
-
-    let solicitud_compra: Solicitud_Compra = {
-        mineral: '',
-        cantidad_a_solicitar: '',
-        fecha_solicitud:new Date(),
-        fecha_entrega:new Date()
-    };
-
-    interface Aliado {
-        rif: string;
-    };
+  
+    // Ahora declara 'datos' con el tipo explícito 'Dato[]'
+    let solicitud: Solicitud_Maquinaria = {
+        
+        tipo_maquinaria: ["Excavadora","Perforadora"],
+        marca: "Caterpillar",
+        modelo: "320D",
+        }
     
     /* async function obtenerDatos() {
         const response = await fetch('http://localhost:4000/aliados');
@@ -33,26 +28,26 @@
       // Función para manejar el envío del formulario
     function registrarDato() {
         // Aquí iría la lógica para procesar los datos del formulario
-        console.log('Registrando dato:', solicitud_compra);
-        goto("/");
+        console.log('Registrando dato:', solicitud);
+        goto("/admin/HomeAdmin/maquinaria")
       }
     </script>
     
     <form on:submit|preventDefault={registrarDato}>
-      <h2>Solicitud A Aliado</h2>
+      <h2>Solicitud Maquinaria</h2>
     
-      <label for="mineral">Mineral</label>
-      <input id="mineral" bind:value={solicitud_compra.mineral} />
+      <label for="tipo_maquinaria">Tipo Maquinaria</label>
+      <input id="maquinaria" bind:value={solicitud.tipo_maquinaria} />
   
-      <label for="cantidad_a_extraer">Cantidad a Solicitar</label>
-      <input id="cantidad_a_extraer" bind:value={solicitud_compra.cantidad_a_solicitar} />
+      <label for="marca">Marca</label>
+      <input id="marca" bind:value={solicitud.marca} />
 
-      <label for="fecha_estimada">Fecha Estimada Entrega</label>
-      <input id="fecha_estimada" bind:value={solicitud_compra.fecha_entrega} />
+      <label for="modelo">Modelo</label>
+      <input id="modelo" bind:value={solicitud.modelo} />
 
       <!-- <Combobox options={aliados} /> -->
   
-      <button type="submit">Registrar configuracion inicial Proyecto</button>
+      <button type="submit">Registrar Solicitud</button>
     </form>
     
     <style>

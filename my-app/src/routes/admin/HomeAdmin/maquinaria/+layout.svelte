@@ -48,6 +48,10 @@
   // Agrega más registros según tus necesidades
 ];
 
+function generarReporte() {
+    // Lógica para generar reporte
+  }
+
 function editarRegistro(index: number) {
     // Lógica para editar el registro en 'datos'
     console.log(`Editando registro en índice ${index}`);
@@ -107,7 +111,10 @@ function editarRegistro(index: number) {
   <a href="/admin/HomeAdmin/registrar/maquinaria">
     <button>Registrar Maquinaria</button>
   </a>
-  <button on:click={() => generarReporte(maquinarias)}>Generar Reporte
+  <a href="/admin/HomeAdmin/reponerInventario/solicitarMaquinaria">
+    <button>Solicitar Maquinaria</button>
+  </a>
+  <button on:click={() => generarReporte()}>Generar Reporte
   </button>
   <style>
         .botonesUD{
