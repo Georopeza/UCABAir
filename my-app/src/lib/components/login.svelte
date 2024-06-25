@@ -15,7 +15,7 @@ async function handleSubmit(event: Event) {
             // Redirigir a la página 2
             goto('/empleado/HomeEmpleado');
         }else if (password === '3') {
-            // Redirigir a la página 2
+            // Redirigir a la página aliado
             goto('/aliado/HomeAliado');
         }else {
             // Clave incorrecta, mostrar un mensaje de error o hacer otra acción

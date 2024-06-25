@@ -7,6 +7,7 @@
       tipo_maquinaria: string[];
       marca: string;
       modelo: string;
+      cantidad_maquinas:number;
     }
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
@@ -15,6 +16,7 @@
         tipo_maquinaria: ["Excavadora","Perforadora"],
         marca: "Caterpillar",
         modelo: "320D",
+        cantidad_maquinas:2,
         }
     
     /* async function obtenerDatos() {
@@ -45,6 +47,9 @@
 
       <label for="modelo">Modelo</label>
       <input id="modelo" bind:value={solicitud.modelo} />
+
+      <label for="cantidad_maquinaria">Cantidad</label>
+      <input id="cantidad_maquinaria" bind:value={solicitud.cantidad_maquinas} />
 
       <!-- <Combobox options={aliados} /> -->
   
