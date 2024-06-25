@@ -6,7 +6,8 @@
     }
     let opcionSeleccionada = '';
   let categories = [
-    { id: 'empleado/HomeEmpleado/proyectos', name: 'Proyectos' }
+    { id: 'empleado/HomeEmpleado/proyectos', name: 'Proyectos' },
+    { id: 'empleado/HomeEmpleado/horarios', name: 'Horarios' }
   ];
 </script>
     <div class="ModuloAdministracion">
