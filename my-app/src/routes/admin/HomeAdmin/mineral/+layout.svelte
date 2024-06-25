@@ -1,6 +1,11 @@
 <script lang="ts">
-  //import {navigate}  from 'svelte-spa-router';
-    let searchTerm = '';
+  import navigate  from 'svelte-spa-router';
+  import { createEventDispatcher } from 'svelte';
+  import RegistrarMineral from '$lib/components/registrarMineral.svelte';
+
+  const dispatch = createEventDispatcher();
+
+  let searchTerm = '';
   function search() {
       // Lógica de búsqueda
       console.log(`Buscando: ${searchTerm}`); 
@@ -34,8 +39,8 @@ export let minerales: Mineral[] = [];
   mostrarDatos();
    //
       // Función para editar un registro
-    async function editarRegistro(minerales:Mineral) {
-      /*try {
+  async function editarRegistro(minerales:Mineral) {
+      try {
           const res = await fetch(`http://localhost:4000/mineral/${minerales.id_mineral}`, {
           method: 'PUT',
           body: JSON.stringify(minerales),
@@ -43,8 +48,7 @@ export let minerales: Mineral[] = [];
           });
 
           if (res.ok) {
-            // Si la solicitud fue exitosa, redirige al usuario
-            navigate('/admin/HomeAdmin/minerales'); // Ajusta la ruta según tu estructura
+				  // Si la solicitud fue exitosa, redirige al usuario        
           }else {
             console.error('Error al actualizar el mineral:', res.status);
           // Maneja el error (por ejemplo, muestra un mensaje de error al usuario)
@@ -52,9 +56,8 @@ export let minerales: Mineral[] = [];
         }catch (error) {
           console.error('Error en la solicitud:', error);
           // Maneja el error (por ejemplo, muestra un mensaje de error al usuario)
-        }*/
-    }
-
+        }
+  }
 
   // Función para eliminar un registro
   async function eliminarRegistro(minerales: Mineral) {
