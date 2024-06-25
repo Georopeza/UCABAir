@@ -42,7 +42,7 @@
     }];
 
     function aprobarSolicitud(index:number) {
-    // Lógica para generar reporte
+    // Lógica para 
     }
 
     function rechazarSolicitud(index: number) {

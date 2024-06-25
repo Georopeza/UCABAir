@@ -42,7 +42,7 @@
     ];
 
     async function generarReporte( aliados:Aliado[]) {
-      //logica para generar reporte
+      //logica para 
   }
 
   function editarRegistro(index: number) {
@@ -96,8 +96,6 @@
   <a href="/admin/HomeAdmin/registrar/aliado">
     <button>Registrar Aliado</button>
   </a>
-  <button on:click={() => generarReporte(aliados)}>Generar Reporte
-  </button>
   <style>
 
 .botonesUD{

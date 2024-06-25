@@ -25,7 +25,7 @@
 export let minerales: Mineral[] = [];
 
   async function generarReporte( minerales:Mineral[]) {
-      //logica para generar reporte
+      //logica para 
   }
 
   async function mostrarDatos() {
@@ -111,8 +111,6 @@ export let minerales: Mineral[] = [];
   <a href="/admin/HomeAdmin/reponerInventario">
     <button>Reponer Inventario</button>
   </a>
-  <button on:click={() => generarReporte(minerales)}>Generar Reporte
-  </button>
   <style>
 
     .botonesUD{

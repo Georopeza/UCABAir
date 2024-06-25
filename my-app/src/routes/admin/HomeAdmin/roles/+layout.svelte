@@ -25,7 +25,7 @@
 export let roles: Rol[] = [];
 
   async function generarReporte( minerales:Rol[]) {
-      //logica para generar reporte
+      //logica para 
   }
 
 /*   async function mostrarDatos() {
@@ -102,8 +102,6 @@ export let roles: Rol[] = [];
   <a href="/admin/HomeAdmin/registrar/rol">
     <button>Registrar Rol</button>
   </a>
-  <button on:click={() => generarReporte(roles)}>Generar Reporte
-  </button>
   <style>
 
     .botonesUD{

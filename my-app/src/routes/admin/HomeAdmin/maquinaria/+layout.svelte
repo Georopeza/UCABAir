@@ -49,7 +49,7 @@
 ];
 
 function generarReporte() {
-    // Lógica para generar reporte
+    // Lógica para 
   }
 
 function editarRegistro(index: number) {
@@ -114,8 +114,6 @@ function editarRegistro(index: number) {
   <a href="/admin/HomeAdmin/reponerInventario/solicitarMaquinaria">
     <button>Solicitar Maquinaria</button>
   </a>
-  <button on:click={() => generarReporte()}>Generar Reporte
-  </button>
   <style>
         .botonesUD{
       display: flex;

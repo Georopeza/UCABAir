@@ -80,7 +80,7 @@
   }
 
   async function generarReporte( proyectos:Proyecto[]) {
-      //logica para generar reporte ()
+      //logica para  ()
   }
 
   </script>
@@ -135,8 +135,6 @@
   <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto">
     <button>Registrar Proyecto</button>
   </a>
-  <button on:click={() => generarReporte(proyectos)}>Generar Reporte
-  </button>
   <style>
         .botonesUD{
       display: flex;
