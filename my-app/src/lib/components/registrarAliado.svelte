@@ -1,7 +1,7 @@
 <script lang=ts>
   export let rif;
   // Interfaz para representar un proveedor
-  interface Proveedor {
+  interface Aliado {
     razon_social: string;
     rif: string;
     direccion_fiscal: string;
@@ -10,7 +10,7 @@
     capacidad_instalada: string;
   }
 
-  let proveedor: Proveedor = {
+  let aliados: Aliado = {
     razon_social: '',
     rif: 'J-2892781991',
     direccion_fiscal: '',
@@ -22,7 +22,7 @@
   // Función para manejar el envío del formulario
   function registrarProveedor() {
     // Aquí iría la lógica para procesar los datos del formulario
-    console.log('Registrando proveedor:', proveedor);
+    console.log('Registrando proveedor:', aliados);
   }
 </script>
 
@@ -30,22 +30,22 @@
   <h2>Registrar Aliado</h2>
 
   <label for="razonSocial">Razón Social</label>
-  <input id="razonSocial" bind:value={proveedor.razon_social} />
+  <input id="razonSocial" bind:value={aliados.razon_social} />
 
   <label for="rif">RIF</label>
-  <input id="rif" bind:value={proveedor.rif} />
+  <input id="rif" bind:value={aliados.rif} />
 
   <label for="direccionFiscal">Dirección Fiscal</label>
-  <input id="direccionFiscal" bind:value={proveedor.direccion_fiscal} />
+  <input id="direccionFiscal" bind:value={aliados.direccion_fiscal} />
 
   <label for="telefono">Telefono</label>
-  <input id="telefono" bind:value={proveedor.telefono} />
+  <input id="telefono" bind:value={aliados.telefono} />
 
   <label for="correo">Correo</label>
-  <input id="correo" bind:value={proveedor.correo} />
+  <input id="correo" bind:value={aliados.correo} />
 
   <label for="capacidadInstalada">Capacidad Instalada</label>
-  <input id="capacidadinstalada" bind:value={proveedor.capacidad_instalada} />
+  <input id="capacidadinstalada" bind:value={aliados.capacidad_instalada} />
 
   <!-- Agrega más campos según la interfaz Proveedor -->
   <!-- Ejemplo: teléfono, correo, capacidad instalada -->

@@ -1,5 +1,5 @@
 <script>
-    import Modificar from '$lib/components/registrarMineral.svelte'
+	import Mineral from "../../mineral/+layout.svelte";
     /**
 	 * @type {any}
 	 */
@@ -8,6 +8,5 @@
 
 <body>
     <div class="RegistrarMineral">
-        <Modificar bind:idProducto={id_mineral}/>
     </div>    
 </body>
