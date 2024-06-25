@@ -24,10 +24,10 @@
             method: 'POST',
             body: JSON.stringify(proyecto),
             headers: { 'Content-Type': 'application/json' },
-        });
-
-        const data = await res.json();
-        console.log(data)
+      });
+      const data = await res.json();
+      console.log(data)
+      alert('Se agregó exitosamente el proyecto')
     }
   </script>
   

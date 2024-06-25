@@ -34,7 +34,8 @@
     function registrarDato() {
         // Aquí iría la lógica para procesar los datos del formulario
         console.log('Registrando dato:', solicitud_compra);
-        goto("/");
+        goto("/admin/HomeAdmin/mineral");
+        alert("La solicitud fue realizada con exito")
       }
     </script>
     

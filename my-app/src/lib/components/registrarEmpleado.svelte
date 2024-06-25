@@ -1,5 +1,6 @@
 <script lang=ts>
-  export let cedula;
+    import { goto } from "$app/navigation";
+    export let message;
     // Interfaz para representar un empleado
     interface Empleado {
       cedula: string;
@@ -27,6 +28,8 @@
     function registrarEmpleado() {
       // Aquí iría la lógica para procesar los datos del formulario
       console.log('Registrando empleado:', empleado);
+      goto("/admin/HomeAdmin/empleado");
+      alert('Se agregó exitosamente el empleado')
     }
   </script>
   

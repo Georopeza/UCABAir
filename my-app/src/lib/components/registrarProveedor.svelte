@@ -1,4 +1,5 @@
 <script lang=ts>
+      import { goto } from "$app/navigation";
     export let rif;
     // Interfaz para representar un proveedor
     interface Proveedor {
@@ -23,6 +24,8 @@
     function registrarProveedor() {
       // Aquí iría la lógica para procesar los datos del formulario
       console.log('Registrando proveedor:', proveedor);
+      goto("/admin/HomeAdmin/proveedores");
+      alert('Se agregó exitosamente el proveedor')
     }
   </script>
   

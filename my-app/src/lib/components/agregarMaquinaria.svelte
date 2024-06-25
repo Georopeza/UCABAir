@@ -1,4 +1,5 @@
-<script lang=ts>
+<script lang=ts>   
+import { goto } from "$app/navigation";
     // Interfaz para representar un dato
     const fecha=new Date();
 
@@ -16,6 +17,8 @@
     function registrarDato() {
       // Aquí iría la lógica para procesar los datos del formulario
       console.log('Registrando dato:', maquinaria);
+      goto("/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad/asignarMaquinaria");
+      alert('Se agregó exitosamente la maquinaria')
     }
   </script>
   

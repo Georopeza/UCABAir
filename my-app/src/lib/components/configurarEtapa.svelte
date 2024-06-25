@@ -20,6 +20,7 @@
     // Función para manejar el envío del formulario
     function registrarDato() {
       // Aquí iría la lógica para procesar los datos del formulario
+      alert("Se registró la configuracion de la etapa")
     }
   </script>
   

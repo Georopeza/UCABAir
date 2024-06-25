@@ -1,5 +1,5 @@
 <script lang=ts>
-
+    import { goto } from "$app/navigation";
 
     interface Mineral{
       id_mineral:string;
@@ -22,18 +22,17 @@
     };
   
     // Función para manejar el envío del formulario
-    async function registrarMineral() {
-      
+  async function registrarMineral() {
       const res = await fetch(`http://localhost:4000/mineral`, {
-            method: 'POST',
-            body: JSON.stringify(mineral),
-            headers: { 'Content-Type': 'application/json' },
-        });
-
-        const data = await res.json();
-        console.log(data)
+      method: 'POST',
+      body: JSON.stringify(mineral),
+      headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await res.json();
+      console.log(data)
       // Aquí iría la lógica para procesar los datos del formulario
-   
+      goto("/admin/HomeAdmin/mineral");
+      alert('Se agregó exitosamente el mineral')
     }
   </script>
   

@@ -1,4 +1,5 @@
 <script lang=ts>
+  import { goto } from "$app/navigation";
   export let rif;
   // Interfaz para representar un proveedor
   interface Aliado {
@@ -23,6 +24,8 @@
   function registrarProveedor() {
     // Aquí iría la lógica para procesar los datos del formulario
     console.log('Registrando proveedor:', aliados);
+    goto("/admin/HomeAdmin/aliados");
+    alert('Se agregó exitosamente el aliado');
   }
 </script>
 

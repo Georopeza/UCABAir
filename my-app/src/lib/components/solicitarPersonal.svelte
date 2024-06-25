@@ -31,6 +31,7 @@
         // Aquí iría la lógica para procesar los datos del formulario
         console.log('Registrando dato:', solicitud);
         goto("/admin/HomeAdmin/empleado")
+        alert("La solicitud fue realizada con exito")
       }
     </script>
     

@@ -12,7 +12,8 @@
     { id: 'admin/HomeAdmin/maquinaria', name: 'Maquinaria' },
     { id: 'admin/HomeAdmin/mineral', name: 'Mineral' },
     { id: 'admin/HomeAdmin/proveedores', name: 'Proveedores' },
-    { id: 'admin/HomeAdmin/proyectos', name: 'Proyectos' }
+    { id: 'admin/HomeAdmin/proyectos', name: 'Proyectos' },
+    { id: 'admin/HomeAdmin/roles', name: 'Roles' }
   ];
 </script>
     <div class="ModuloAdministracion">

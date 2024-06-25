@@ -18,6 +18,8 @@
     function registrarDato() {
       // Aquí iría la lógica para procesar los datos del formulario
       console.log('Registrando dato:', actividad);
+      
+      alert("Se registró la configuracion de la etapa")
     }
   </script>
   

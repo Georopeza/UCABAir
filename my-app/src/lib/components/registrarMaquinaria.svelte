@@ -1,5 +1,5 @@
-<script lang=ts>
-    export let placa_identificacion;
+<script lang=ts>    
+import { goto } from "$app/navigation";
     // Interfaz para representar un dato
     interface Maquinaria {
       tipo_maquinaria: string;
@@ -31,6 +31,8 @@
     function registrarDato() {
       // Aquí iría la lógica para procesar los datos del formulario
       console.log('Registrando dato:', maquinaria);
+      goto("/admin/HomeAdmin/maquinaria");
+      alert('Se agregó exitosamente la maquinaria')
     }
   </script>
   

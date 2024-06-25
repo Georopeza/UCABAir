@@ -1,4 +1,5 @@
 <script lang=ts>
+  import { goto } from "$app/navigation";
   const fecha=new Date();
     // Interfaz para representar un dato
     interface Proyecto {
@@ -23,6 +24,8 @@
     function registrarDato() {
       // Aquí iría la lógica para procesar los datos del formulario
       console.log('Registrando dato:', proyecto);
+      alert("Se registró la configuracion inicial del proyecto")
+      //goto();
     }
   </script>
   

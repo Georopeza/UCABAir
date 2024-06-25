@@ -1,7 +1,8 @@
-<script lang=ts>
+<script lang=ts>    
+  import { goto } from "$app/navigation";
     export let cedula;
     // Interfaz para representar un empleado
-    interface Empleado {
+    interface Cliente {
       cedula: string;
       nombre: string[];
       apellido: string[];
@@ -10,7 +11,7 @@
       direccion: string;
     }
   
-    let empleado: Empleado = {
+    let cliente: Cliente = {
       cedula: 'V-2871812729',
       nombre: [],
       apellido: [],
@@ -22,7 +23,9 @@
     // Función para manejar el envío del formulario
     function registrarEmpleado() {
       // Aquí iría la lógica para procesar los datos del formulario
-      console.log('Registrando empleado:', empleado);
+      console.log('Registrando cliente:', cliente);
+      goto("/admin/HomeAdmin/clientes");
+      alert('Se agregó exitosamente el cliente')
     }
   </script>
   
@@ -30,22 +33,22 @@
     <h2>Registrar Cliente</h2>
   
     <label for="cedula">Cédula</label>
-    <input id="cedula" bind:value={empleado.cedula} />
+    <input id="cedula" bind:value={cliente.cedula} />
 
     <label for="nombre">Nombre</label>
-    <input id="nombre" bind:value={empleado.nombre} />
+    <input id="nombre" bind:value={cliente.nombre} />
 
     <label for="apellido">Apellido</label>
-    <input id="apellido" bind:value={empleado.apellido} />
+    <input id="apellido" bind:value={cliente.apellido} />
   
     <label for="telefonos">Nombres</label>
-    <input id="telefonos" bind:value={empleado.telefono} />
+    <input id="telefonos" bind:value={cliente.telefono} />
   
     <label for="correo">Correos</label>
-    <input id="correo" bind:value={empleado.correo} />
+    <input id="correo" bind:value={cliente.correo} />
 
     <label for="direccion">Direccion</label>
-    <input id="direccion" bind:value={empleado.direccion} />
+    <input id="direccion" bind:value={cliente.direccion} />
   
     <button type="submit">Registrar Cliente</button>
   </form>
