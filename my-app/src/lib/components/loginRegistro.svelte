@@ -1,30 +1,43 @@
-<script lang=ts>
-import { goto } from '$app/navigation';
-    async function handleSubmit(event:Event) {
-    event.preventDefault();
-    // Aquí iría la lógica para verificar las credenciales de inicio de sesión
-    // Si las credenciales son correctas, redirige al usuario
-    goto('/admin/HomeAdmin');
-  }
+<script>
     let username='';
     let password='';
-
 </script>
+
+
+<div class="cajaIngresoRegistro">
     <div class="cajaInicioSesion">
         <div class="cajaborde">
-            <h2>Ingrese con sus credenciales de inicio de sesion</h2>
-            <form on:submit={handleSubmit} class='cajachica'>
+            <form action="?/login" method="post" class='cajachica'>
+                <div class="titulocaja">
+                    <h2 class="palabras">Si ya tienes una cuenta</h2>
+                </div>
+
                 <label class='palabras' style="margin-top: 5%;" for='username'>Correo Electronico:</label>
                 <input class='palabras' id='username' name='username' type='text' placeholder="Usuario"/>
 
+
                 <label class='palabras' style="margin-top: 5%;" for='password'>Contraseña:</label>
-                <input class='palabras' id='password' name='password' type='password' placeholder="*********" />
+                <input  class='palabras' id='password' name='password'type='password' placeholder="*********" />
 
                 <button type='submit' class="ingresar">Ingresar</button>
             </form>
         </div>
+        <div>Si eres admin pulsa
+            <a href="/moduloGestion">aqui</a>
+        </div>
+    </div>
+    <div class="lineaSeparacion">
+        <p>i</p>
+    </div>
+    <div class="cajaRegistro">
+        <div class="mensajeRegistrate">
+            <p> Si no tienes una cuenta registrate</p>
+            <a href="/registro">Registrarme</a>
+        </div>
     </div>
     
+
+</div>
 
 
 
@@ -34,6 +47,11 @@ import { goto } from '$app/navigation';
 
 <style>
 
+    .lineaSeparacion{
+        height: 300px;
+        background-color: gray;
+        color:gray;
+    }
 
     .form-label{
         margin-top: 5%;
@@ -64,14 +82,14 @@ import { goto } from '$app/navigation';
         justify-content: center;
     }
     .cajaInicioSesion{
-        margin:100px;
-        width: 90%;
+        margin:80px;
+        width: 300px;
         display:flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         border-radius: 10px;
-        height: 300px;
+        height: 450px;
     
     }
     .cajaborde{
@@ -95,6 +113,16 @@ import { goto } from '$app/navigation';
         font-family: 'Courier New', Courier, monospace;
     }
 
+    .cajaIngresoRegistro{
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;  
+        margin:0px 150px 0px 100px;
+        
+
+    }
      .cajachica{
         width: 500px;
         display:flex;
@@ -108,4 +136,9 @@ import { goto } from '$app/navigation';
         height: 100px;
     }
 
+
+    .mensajeRegistrate{
+        justify-content: center;
+        align-items: center;
+    }
 </style>

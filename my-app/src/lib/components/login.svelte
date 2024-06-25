@@ -1,43 +1,46 @@
-<script>
+<script lang=ts>
+import { goto } from '$app/navigation';
+
+async function handleSubmit(event: Event) {
+    event.preventDefault();
+    // Obtener el valor del campo de contraseña
+    const passwordInput = document.getElementById('password') as HTMLInputElement;
+    const password = passwordInput.value;
+    console.log(password)
+    // Verificar la clave y redirigir según el valor
+        if (password === '1') {
+            // Redirigir a la página 1
+            goto('/admin/HomeAdmin');
+        } else if (password === '2') {
+            // Redirigir a la página 2
+            goto('/empleado/HomeEmpleado');
+        }else if (password === '3') {
+            // Redirigir a la página 2
+            goto('/aliado/HomeAliado');
+        }else {
+            // Clave incorrecta, mostrar un mensaje de error o hacer otra acción
+            console.error('Clave incorrecta');
+    }
+}
     let username='';
     let password='';
+
 </script>
-
-
-<div class="cajaIngresoRegistro">
     <div class="cajaInicioSesion">
         <div class="cajaborde">
-            <form action="?/login" method="post" class='cajachica'>
-                <div class="titulocaja">
-                    <h2 class="palabras">Si ya tienes una cuenta</h2>
-                </div>
-
+            <h2>Ingrese con sus credenciales de inicio de sesion</h2>
+            <form on:submit={handleSubmit} class='cajachica'>
                 <label class='palabras' style="margin-top: 5%;" for='username'>Correo Electronico:</label>
                 <input class='palabras' id='username' name='username' type='text' placeholder="Usuario"/>
 
-
                 <label class='palabras' style="margin-top: 5%;" for='password'>Contraseña:</label>
-                <input  class='palabras' id='password' name='password'type='password' placeholder="*********" />
+                <input class='palabras' id='password' name='password' type='password' placeholder="*********" />
 
                 <button type='submit' class="ingresar">Ingresar</button>
             </form>
         </div>
-        <div>Si eres admin pulsa
-            <a href="/moduloGestion">aqui</a>
-        </div>
-    </div>
-    <div class="lineaSeparacion">
-        <p>i</p>
-    </div>
-    <div class="cajaRegistro">
-        <div class="mensajeRegistrate">
-            <p> Si no tienes una cuenta registrate</p>
-            <a href="/registro">Registrarme</a>
-        </div>
     </div>
     
-
-</div>
 
 
 
@@ -47,11 +50,6 @@
 
 <style>
 
-    .lineaSeparacion{
-        height: 300px;
-        background-color: gray;
-        color:gray;
-    }
 
     .form-label{
         margin-top: 5%;
@@ -82,14 +80,14 @@
         justify-content: center;
     }
     .cajaInicioSesion{
-        margin:80px;
-        width: 300px;
+        margin:100px;
+        width: 90%;
         display:flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         border-radius: 10px;
-        height: 450px;
+        height: 300px;
     
     }
     .cajaborde{
@@ -113,16 +111,6 @@
         font-family: 'Courier New', Courier, monospace;
     }
 
-    .cajaIngresoRegistro{
-        display:flex;
-        flex-direction:row;
-        justify-content: center;
-        align-items: center;
-        justify-content: space-between;  
-        margin:0px 150px 0px 100px;
-        
-
-    }
      .cajachica{
         width: 500px;
         display:flex;
@@ -136,9 +124,4 @@
         height: 100px;
     }
 
-
-    .mensajeRegistrate{
-        justify-content: center;
-        align-items: center;
-    }
 </style>
