@@ -56,6 +56,7 @@
   </script>
   <table>
     <thead>
+      <h2>Actividades</h2>
       <tr>
         <th>Numero Actividad</th>
         <th>Numero Etapa</th>
@@ -83,7 +84,7 @@
                   <span>🗑️</span> <!-- Icono de papelera -->
                 </button>
               <a href=/admin/HomeAdmin/organizacion>
-                <button>Ver Recursos</button>
+                <button>Ver Organizacion</button>
               </a>
             </div>
         </tr>

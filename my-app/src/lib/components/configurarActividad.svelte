@@ -1,3 +1,4 @@
+<!-- Interfaz para representar un dato -->
 <script lang=ts>
   export let id_editar:number;
   console.log(id_editar);
@@ -6,43 +7,22 @@
 
     interface Actividad {
       id_actividad_organizacion:String;
-	id_etapa_organizacion:String;
-	id_proyecto_organizacion:String;
-	ac_or_descripcion:String;
-	ac_or_costo_estimado:String;
-	ac_or_duracion:String;
+	    id_etapa_organizacion:String;
+	    id_proyecto_organizacion:String;
+	    ac_or_descripcion:String;
+	    ac_or_costo_estimado:String;
+	    ac_or_duracion:String;
     }
-  interface Organizacion{
-  id_organizacion:string;
-  id_actividad_organizacion:String;
-	id_etapa_organizacion:String;
-	id_proyecto_organizacion:String;
-	id_cargo:String;
-	id_equipo:String;
-	or_cantidad_equipo:String;
-	or_cantidad_cargo:String;
-	or_dias_trabajo_cargo:String;
-  }
+
     let actividad: Actividad = {
-      id_actividad_organizacion:'',
-	id_etapa_organizacion:'',
-	id_proyecto_organizacion:'',
-	ac_or_descripcion:'',
-	ac_or_costo_estimado:'',
-	ac_or_duracion:'',
-    };
-    let organizacion:Organizacion={
-      id_organizacion:'',
       id_actividad_organizacion:'',
 	    id_etapa_organizacion:'',
 	    id_proyecto_organizacion:'',
-	    id_cargo:'',
-	    id_equipo:'',
-	    or_cantidad_equipo:'',
-	    or_cantidad_cargo:'',
-	    or_dias_trabajo_cargo:'',
-    }
-  
+	    ac_or_descripcion:'',
+	    ac_or_costo_estimado:'',
+	    ac_or_duracion:'',
+    };
+   
     // Función para manejar el envío del formulario
     async function registrarDato() {
       const res = await fetch(`http://localhost:4000/actividad`, {
@@ -59,23 +39,23 @@
 
   <form on:submit|preventDefault={registrarDato}>
     <div class="actividad">
-        <label for="nombre_actividad">Nombre Actividad</label>
+        <label for="nombre_actividad">ID Actividad Organizacion</label>
         <input id="nombre_actividad" bind:value={actividad.id_actividad_organizacion} />
 
-        <label for="fecha_inicio">Fecha Inicio</label>
-        <input id="fecha_inicio" bind:value={actividad.id_etapa_organizacion} />
+        <label for="id_etapa_organizacion">ID Etapa Organizacion</label>
+        <input id="id_etapa_organizacion" bind:value={actividad.id_etapa_organizacion} />
 
-        <label for="fecha_fin_estimada">Fecha Fin Estimada</label>
-        <input id="fecha_fin_estimada" bind:value={actividad.id_proyecto_organizacion} />
+        <label for="id_proyecto_organizacion">ID Proyecto Organizacion</label>
+        <input id="id_proyecto_organizacion" bind:value={actividad.id_proyecto_organizacion} />
 
-        <label for="fecha_fin_estimada">Fecha Fin Estimada</label>
-        <input id="fecha_fin_estimada" bind:value={actividad.ac_or_descripcion} />
+        <label for="ac_or_descripcion">Descripcion</label>
+        <input id="ac_or_descripcion" bind:value={actividad.ac_or_descripcion} />
 
-        <label for="fecha_fin_estimada">Fecha Fin Estimada</label>
-        <input id="fecha_fin_estimada" bind:value={actividad.ac_or_costo_estimado} />
+        <label for="ac_or_costo_estimado">Costo Estimado Actividad</label>
+        <input id="ac_or_costo_estimado" bind:value={actividad.ac_or_costo_estimado} />
 
-        <label for="fecha_fin_estimada">Fecha Fin Estimada</label>
-        <input id="fecha_fin_estimada" bind:value={actividad.ac_or_duracion} />
+        <label for="ac_or_duracion">Duracion</label>
+        <input id="ac_or_duracion" bind:value={actividad.ac_or_duracion} />
     </div>
     <button type="submit">Registrar configuracion Actividad</button>
   </form>
@@ -83,6 +63,7 @@
     /* Estilos generales para el formulario */
      .actividad{
         display: flex;
+        flex-direction: column;
         flex-direction: column;
     }
  
@@ -124,4 +105,3 @@
       font-size: 16px;
     }
   </style>
-  
