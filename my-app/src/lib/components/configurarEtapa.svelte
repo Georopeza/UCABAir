@@ -3,24 +3,30 @@
     const fecha=new Date();
 
     interface Etapa {
-      nombre_etapa: string;
-      costo: string;
-      fecha_inicio:string;
-      fecha_fin_estimada:string;
-      cant_actividades:number;
+      id_etapa_organizacion:String;
+      id_proyecto_organizacion:String;
+      et_or_descripcion:String;
+      et_costo_estimado:String;
+      et_or_duracion:String;
     }
   
     let etapa: Etapa = {
-      nombre_etapa: '',
-      costo: '',
-      fecha_inicio:'',
-      fecha_fin_estimada:'',
-      cant_actividades:1
+      id_etapa_organizacion:'',
+      id_proyecto_organizacion:'',
+      et_or_descripcion:'',
+      et_costo_estimado:'',
+      et_or_duracion:''
     };
     // Función para manejar el envío del formulario
-    function registrarDato() {
-      // Aquí iría la lógica para procesar los datos del formulario
-      alert("Se registró la configuracion de la etapa")
+    async function registrarDato() {
+      const res = await fetch(`http://localhost:4000/etapa`, {
+      method: 'POST',
+      body: JSON.stringify(etapa),
+      headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await res.json();
+      console.log(data)
+      alert('Se agregó exitosamente la etapa')
     }
   </script>
   
@@ -28,17 +34,21 @@
     <h2>Configuracion Etapa</h2>
 
     <div class="datos_etapa">
-      <label for="nombre_etapa">Nombre Etapa</label>
-      <input id="nombre_etapa" bind:value={etapa.nombre_etapa} />
+      <label for="NumeroEtapa">Numero de Etapa</label>
+      <input id="NumeroEtapa" bind:value={etapa.id_etapa_organizacion} />
 
-      <label for="fecha_inicio">Fecha Inicio</label>
-      <input id="fecha_inicio" bind:value={etapa.fecha_inicio} />
+      <label for="NumeroProyecto">Id del Proyecto</label>
+      <input id="NumeroProyecto" bind:value={etapa.id_proyecto_organizacion} />
 
-      <label for="fecha_fin_estimada ">Fecha Fin Estimada</label>
-      <input id="fecha_fin_estimada" bind:value={etapa.fecha_fin_estimada} />
+      <label for="Descripcion">Descripcion</label>
+      <input id="Descripcion" bind:value={etapa.et_or_descripcion} />
 
-      <label for="cant_actividades ">Cantidad Actividades</label>
-      <input id="cant_actividades" bind:value={etapa.cant_actividades} />
+      <label for="CostoEstimado">Costo estimado</label>
+      <input id="CostoEstimado" bind:value={etapa.et_costo_estimado} />
+
+      <label for="Duracion">Duracion</label>
+      <input id="Duracion" bind:value={etapa.et_or_duracion} />
+      
     </div>
     <button type="submit">Registrar configuracion Etapa</button>
   </form>

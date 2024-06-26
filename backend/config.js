@@ -8,10 +8,7 @@ module.exports= {
         host: process.env.DB_HOST,
         port: process.env.DB_PORT,
         database: process.env.DB_DATABASE
-    },
-    direccion:{
-        frontend:process.env.FRONT_URL|| process.env.FRONT_URL2
     }
     
-    
+     
 }
