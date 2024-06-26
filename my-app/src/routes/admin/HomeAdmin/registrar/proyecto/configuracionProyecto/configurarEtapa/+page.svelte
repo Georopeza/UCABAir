@@ -10,7 +10,7 @@
         <h2>Configuracion Etapa</h2>
             <ConfigurarEtapa/>
                 <div class="botones">
-                    <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad/asignarEmpleado">
+                    <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad">
                         <button>Configurar Actividades</button>
                     </a>
                     <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa">
@@ -27,8 +27,6 @@
 
 button {
     background-color: #050505;
-    justify-content: center;
-    width: 50%;
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -36,4 +34,5 @@ button {
     cursor: pointer;
     font-size: 16px;
   }
+
   </style>

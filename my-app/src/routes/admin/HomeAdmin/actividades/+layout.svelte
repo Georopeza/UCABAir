@@ -56,6 +56,7 @@
   </script>
   <table>
     <thead>
+      <h2>Actividades</h2>
       <tr>
         <th>Nombre Actividad</th>
         <th>Fecha Inicio</th>
@@ -77,8 +78,8 @@
                 <button on:click={() => eliminarRegistro(i)}>
                   <span>🗑️</span> <!-- Icono de papelera -->
                 </button>
-              <a href=/admin/HomeAdmin/recursos>
-                <button>Ver Recursos</button>
+              <a href=/admin/HomeAdmin/organizacion>
+                <button>Ver Organizacion</button>
               </a>
             </div>
         </tr>

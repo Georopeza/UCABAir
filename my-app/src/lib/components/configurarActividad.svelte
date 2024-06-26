@@ -1,39 +1,58 @@
+<!-- Interfaz para representar un dato -->
 <script lang=ts>
-    // Interfaz para representar un dato
     const fecha=new Date();
 
     interface Actividad {
-      nombre_actividad: string;
-      fecha_inicio:string;
-      fecha_fin_estimada:string;
+      id_actividad_organizacion:String;
+	    id_etapa_organizacion:String;
+	    id_proyecto_organizacion:String;
+	    ac_or_descripcion:String;
+	    ac_or_costo_estimado:String;
+	    ac_or_duracion:String;
     }
-  
+
     let actividad: Actividad = {
-      nombre_actividad: '',
-      fecha_inicio: fecha.toLocaleDateString(),
-      fecha_fin_estimada:fecha.toLocaleDateString(),
+      id_actividad_organizacion:'',
+	    id_etapa_organizacion:'',
+	    id_proyecto_organizacion:'',
+	    ac_or_descripcion:'',
+	    ac_or_costo_estimado:'',
+	    ac_or_duracion:'',
     };
-  
+   
     // Función para manejar el envío del formulario
-    function registrarDato() {
-      // Aquí iría la lógica para procesar los datos del formulario
-      console.log('Registrando dato:', actividad);
-      
-      alert("Se registró la configuracion de la etapa")
+    async function registrarDato() {
+      const res = await fetch(`http://localhost:4000/actividad`, {
+      method: 'POST',
+      body: JSON.stringify(actividad),
+      headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await res.json();
+      console.log(data)
+    
+      alert("Se registró la configuracion de la actividad")
     }
   </script>
-  
+
   <form on:submit|preventDefault={registrarDato}>
     <div class="actividad">
-        <label for="nombre_actividad">Nombre Actividad</label>
-        <input id="nombre_actividad" bind:value={actividad.nombre_actividad} />
+        <label for="nombre_actividad">ID Actividad Organizacion</label>
+        <input id="nombre_actividad" bind:value={actividad.id_actividad_organizacion} />
 
-        <label for="fecha_inicio">Fecha Inicio</label>
-        <input id="fecha_inicio" bind:value={actividad.fecha_inicio} />
+        <label for="id_etapa_organizacion">ID Etapa Organizacion</label>
+        <input id="id_etapa_organizacion" bind:value={actividad.id_etapa_organizacion} />
 
-        <label for="fecha_fin_estimada">Fecha Fin Estimada</label>
-        <input id="fecha_fin_estimada" bind:value={actividad.fecha_fin_estimada} />
+        <label for="id_proyecto_organizacion">ID Proyecto Organizacion</label>
+        <input id="id_proyecto_organizacion" bind:value={actividad.id_proyecto_organizacion} />
 
+        <label for="ac_or_descripcion">Descripcion</label>
+        <input id="ac_or_descripcion" bind:value={actividad.ac_or_descripcion} />
+
+        <label for="ac_or_costo_estimado">Costo Estimado Actividad</label>
+        <input id="ac_or_costo_estimado" bind:value={actividad.ac_or_costo_estimado} />
+
+        <label for="ac_or_duracion">Duracion</label>
+        <input id="ac_or_duracion" bind:value={actividad.ac_or_duracion} />
     </div>
     <button type="submit">Registrar configuracion Actividad</button>
   </form>
@@ -41,7 +60,7 @@
     /* Estilos generales para el formulario */
      .actividad{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     }
  
     form {
@@ -82,4 +101,3 @@
       font-size: 16px;
     }
   </style>
-  
