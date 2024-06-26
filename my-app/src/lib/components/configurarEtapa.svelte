@@ -1,6 +1,8 @@
 <script lang=ts>
     // Interfaz para representar un dato
     const fecha=new Date();
+    export let id_editar:number;
+    console.log(id_editar);
 
     interface Etapa {
       id_etapa_organizacion:String;

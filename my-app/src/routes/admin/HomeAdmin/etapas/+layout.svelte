@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { goto } from "$app/navigation";
+
   let searchTerm = '';
   const fecha=new Date();
   function search() {
@@ -53,12 +55,20 @@
     function editarRegistro(index: number) {
     // Lógica para editar el registro en 'datos'
     console.log(`Editando registro en índice ${index}`);
+    goto(`/admin/HomeAdmin/editar/etapa/${index}`);
   }
 
   // Función para eliminar un registro
   function eliminarRegistro(index: number) {
     // Lógica para eliminar el registro en 'datos'
     console.log(`Eliminando registro en índice ${index}`);
+  }
+
+  function obtenerActividades(index: number) {
+    // Lógica para eliminar el registro en 'datos'
+    console.log(`Eliminando registro en índice ${index}`);
+    //goto(`/admin/HomeAdmin/actividades/${index}`);
+    goto(`/admin/HomeAdmin/actividades/`);
   }
 
   </script>
@@ -83,17 +93,13 @@
           <td>{etapa.cant_actividades}</td>
           <td>
             <div class="botonesUD">
-              <a href=/admin/HomeAdmin/etapas>
                   <button on:click={() => editarRegistro(i)}>
-                    <span>✏️</span> <!-- Icono de lápiz -->
+                      <span>✏️</span> <!-- Icono de lápiz -->
                   </button>
-              </a>
-              <button on:click={() => eliminarRegistro(i)}>
-                <span>🗑️</span> <!-- Icono de papelera -->
-              </button>
-              <a href=/admin/HomeAdmin/actividades>
-                <button>Ver Actividades</button>
-              </a>
+                <button on:click={() => eliminarRegistro(i)}>
+                  <span>🗑️</span> <!-- Icono de papelera -->
+                </button>
+                <button on:click={() => obtenerActividades(i)}>Ver Actividades</button>
             </div>
             </td>
         </tr>

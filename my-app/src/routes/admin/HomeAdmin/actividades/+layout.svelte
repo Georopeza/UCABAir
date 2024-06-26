@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { goto } from "$app/navigation";
+
   let searchTerm = '';
   const fecha=new Date();
   function search() {
@@ -42,6 +44,7 @@
     function editarRegistro(index: number) {
     // Lógica para editar el registro en 'datos'
     console.log(`Editando registro en índice ${index}`);
+    goto(`/admin/HomeAdmin/editar/actividad/${index}`);
   }
 
   // Función para eliminar un registro
@@ -54,14 +57,12 @@
   <table>
     <thead>
       <tr>
-       
         <th>Numero Actividad</th>
         <th>Numero Etapa</th>
         <th>Numero Proyecto</th>
         <th>Descripcion</th>
         <th>Costo estimado</th>
         <th>Duracion</th>
-  
       </tr>
     </thead>
     <tbody>
@@ -75,15 +76,13 @@
           <td>{actividad.ac_or_duracion}</td>
           
           <div class="botonesUD">
-              <a href=/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad>
                 <button on:click={() => editarRegistro(i)}>
                   <span>✏️</span> <!-- Icono de lápiz -->
                 </button>
-              </a>
                 <button on:click={() => eliminarRegistro(i)}>
                   <span>🗑️</span> <!-- Icono de papelera -->
                 </button>
-              <a href=/admin/HomeAdmin/recursos>
+              <a href=/admin/HomeAdmin/organizacion>
                 <button>Ver Recursos</button>
               </a>
             </div>

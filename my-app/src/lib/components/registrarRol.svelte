@@ -1,4 +1,6 @@
 <script lang=ts>
+  export let id_editar:number;
+  console.log(id_editar);
 	import { goto } from "$app/navigation";
 
       // Interfaz para representar un empleado

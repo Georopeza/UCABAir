@@ -1,4 +1,6 @@
 <script lang=ts>
+  export let id_editar:number;
+  console.log(id_editar);
     // Interfaz para representar un dato
     const fecha=new Date();
 
@@ -81,7 +83,7 @@
     /* Estilos generales para el formulario */
      .actividad{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     }
  
     form {

@@ -1,16 +1,16 @@
 <script lang=ts>    
+	import { page } from '$app/stores';
     import ConfigurarEtapa from '$lib/components/configurarEtapa.svelte'
-    import Etapas from '$lib/components/configurarProyecto.svelte'
-
+	let id_editar =Number($page.params.index);
 </script>
 
 <body>
     <!-- <Etapas bind:cantidad_etapas={cantidad_etapas}/> -->
     <div class="ConfigurarEtapa">
         <h2>Configuracion Etapa</h2>
-            <ConfigurarEtapa/>
+            <ConfigurarEtapa bind:id_editar={id_editar}/>
                 <div class="botones">
-                    <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad">
+                    <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad/asignarEmpleado">
                         <button>Configurar Actividades</button>
                     </a>
                     <a href="/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa">

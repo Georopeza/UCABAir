@@ -1,5 +1,5 @@
 <script>
-    import Registro from '$lib/components/registrarProyecto.svelte'
+    import Registro from '$lib/components/configurarProyecto.svelte'
         console.log('Hola desde la consolaaaaanaskanska');
 </script>
 

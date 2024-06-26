@@ -1,4 +1,5 @@
 <script lang="ts">
+import { goto } from "$app/navigation";
   let searchTerm = '';
   const fecha=new Date();
   function search() {
@@ -68,8 +69,9 @@
       // Tus datos aquí
     ];
 
-    function editarRegistro(index: number) {
+  function editarRegistro(index: number) {
     // Lógica para editar el registro en 'datos'
+    goto(`/admin/HomeAdmin/editar/proyecto/${index}`);
     console.log(`Editando registro en índice ${index}`);
   }
 
@@ -115,11 +117,9 @@
           <td>{proyecto.estatus}</td>
           <td>
             <div class="botonesUD">
-              <a href=/admin/HomeAdmin/registrar/proyecto>
                   <button on:click={() => editarRegistro(i)}>
                     <span>✏️</span> <!-- Icono de lápiz -->
                   </button>
-              </a>
               <button on:click={() => eliminarRegistro(i)}>
                 <span>🗑️</span> <!-- Icono de papelera -->
               </button>

@@ -1,5 +1,7 @@
 <script lang=ts>
   import { goto } from "$app/navigation";
+	import { page } from "$app/stores";
+  export let id_editar:number;
     // Interfaz para representar un dato
     interface Proyecto {
       id_proyecto_organizacion: string;
@@ -28,14 +30,13 @@
       });
       const data = await res.json();
       console.log(data)
-      goto("/admin/HomeAdmin/proyectos");
       alert('Se agregó exitosamente el proyecto')
     }
   </script>
   
   <form on:submit|preventDefault={registrarDato}>
     <h2>Registrar Proyecto</h2>
-  
+
     <label for="NumeroOrganizacionProyecto">Numero Organizacion de Proyecto</label>
     <input id="NumeroOrganizacionProyecto" bind:value={proyecto.id_proyecto_organizacion} />
   
