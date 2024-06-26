@@ -1,56 +1,60 @@
 <script lang=ts>
   import { goto } from "$app/navigation";
-  const fecha=new Date();
     // Interfaz para representar un dato
     interface Proyecto {
-      mineral: string;
-      cantidad_a_extraer: string;
-      ubicacion: string;
-      fecha_inicial: string;
-      fecha_fin_estimada: string;
-      cantidad_etapas:number;
+      id_proyecto_organizacion: string;
+      pr_or_duracion: String;
+      pr_or_costo_estimado: String;
+      pr_or_descripcion: String;
+      id_mineral: String;
+      rif_empresa: String;
     }
   
     let proyecto: Proyecto = {
-      mineral: '',
-      cantidad_a_extraer: '',
-      ubicacion:'',
-      fecha_inicial: fecha.toLocaleDateString(),
-      fecha_fin_estimada: fecha.toLocaleDateString(),
-      cantidad_etapas:10
+      id_proyecto_organizacion: '',
+      pr_or_duracion: '',
+      pr_or_costo_estimado: '',
+      pr_or_descripcion: '',
+      id_mineral: '',
+      rif_empresa: '',
     };
   
     // Función para manejar el envío del formulario
-    function registrarDato() {
-      // Aquí iría la lógica para procesar los datos del formulario
-      console.log('Registrando dato:', proyecto);
-      alert("Se registró la configuracion inicial del proyecto")
-      //goto();
+    async function registrarDato() {
+      const res = await fetch(`http://localhost:4000/proyecto`, {
+            method: 'POST',
+            body: JSON.stringify(proyecto),
+            headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await res.json();
+      console.log(data)
+      goto("/admin/HomeAdmin/proyectos");
+      alert('Se agregó exitosamente el proyecto')
     }
   </script>
   
   <form on:submit|preventDefault={registrarDato}>
-    <h2>Configuracion Explotacion</h2>
+    <h2>Registrar Proyecto</h2>
   
-    <label for="mineral">Mineral</label>
-    <input id="mineral" bind:value={proyecto.mineral} />
+    <label for="NumeroOrganizacionProyecto">Numero Organizacion de Proyecto</label>
+    <input id="NumeroOrganizacionProyecto" bind:value={proyecto.id_proyecto_organizacion} />
+  
+    <label for="DuracionProyecto">Duracion del Proyecto</label>
+    <input id="DuracionProyecto" bind:value={proyecto.pr_or_duracion} />
+  
+    <label for="CostoEstiminado">Costo Estiminado</label>
+    <input id="CostoEstiminado" bind:value={proyecto.pr_or_costo_estimado} />
+  
+    <label for="DescripcionProyecto">Descripcion del Proyecto</label>
+    <input id="DescripcionProyecto" bind:value={proyecto.pr_or_descripcion} />
+  
+    <label for="Mineral">Mineral a extraer</label>
+    <input id="Mineral" bind:value={proyecto.id_mineral} />
+  
+    <label for="Empresa">Empresa que pide el proyecto</label>
+    <input id="Empresa" bind:value={proyecto.rif_empresa} />
 
-    <label for="cantidad_a_extraer">Cantidad a extraer</label>
-    <input id="cantidad_a_extraer" bind:value={proyecto.cantidad_a_extraer} />
-
-    <label for="ubicacion">Ubicacion</label>
-    <input id="ubicacion" bind:value={proyecto.ubicacion} />
-
-    <label for="fecha_inicial">Fecha Inicial</label>
-    <input id="fecha_inicial" bind:value={proyecto.fecha_inicial} />
-
-    <label for="fecha_fin_estimada">Fecha Final (estimada)</label>
-    <input id="fecha_fin_estimada" bind:value={proyecto.fecha_fin_estimada} />
-
-    <label for="cantidad_etapas">Cantidad Etapas</label>
-    <input id="cantidad_etapas" bind:value={proyecto.cantidad_etapas} />
-
-    <button type="submit">Registrar configuracion inicial Proyecto</button>
+    <button type="submit">Registrar Proyecto</button>
   </form>
   
   <style>

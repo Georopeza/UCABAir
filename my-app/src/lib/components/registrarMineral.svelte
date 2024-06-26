@@ -30,7 +30,6 @@
       });
       const data = await res.json();
       console.log(data)
-      // Aquí iría la lógica para procesar los datos del formulario
       goto("/admin/HomeAdmin/mineral");
       alert('Se agregó exitosamente el mineral')
     }

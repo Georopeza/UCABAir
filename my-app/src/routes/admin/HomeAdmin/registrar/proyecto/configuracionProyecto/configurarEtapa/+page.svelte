@@ -27,8 +27,6 @@
 
 button {
     background-color: #050505;
-    justify-content: center;
-    width: 50%;
     color: #fff;
     border: none;
     border-radius: 3px;

@@ -3,19 +3,24 @@
 
       // Interfaz para representar un empleado
       interface Rol {
-            rol:string;
-            descripcion:string;
+            id_rol:string;
+            ro_nombre:string;
       }
     
     let rol: Rol = {
-        rol:"admin",
-        descripcion:"Administrador del sistema"
+        id_rol:"",
+        ro_nombre:""
       };
     
       // Función para manejar el envío del formulario
-      function registrarRol() {
-        // Aquí iría la lógica para procesar los datos del formulario
-        console.log('Registrando rol:', rol);
+      async function registrarRol() {
+        const res = await fetch(`http://localhost:4000/rol`, {
+      method: 'POST',
+      body: JSON.stringify(rol),
+      headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await res.json();
+      console.log(data)
         alert('Rol agregado con exito');
         goto("/admin/HomeAdmin/roles");
     }
@@ -25,10 +30,10 @@
       <h2>Registrar Rol</h2>
     
       <label for="rol">Rol</label>
-      <input id="rol" bind:value={rol.rol} />
+      <input id="rol" bind:value={rol.id_rol} />
   
-      <label for="descripcion">Descripcion</label>
-      <input id="descripcion" bind:value={rol.descripcion} />
+      <label for="nombreRol">Nombre del Rol</label>
+      <input id="nombreRol" bind:value={rol.ro_nombre} />
     
       <button type="submit">Registrar Rol</button>
     </form>

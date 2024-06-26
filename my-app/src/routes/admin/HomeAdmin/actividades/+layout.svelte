@@ -9,9 +9,12 @@
     // Define una interfaz para el tipo de datos que contiene 'datos'
 
     interface Actividad {
-      nombre_actividad: string;
-      fecha_inicio:string;
-      fecha_fin_estimada:string;
+      id_actividad_organizacion:String;
+	id_etapa_organizacion:String;
+	id_proyecto_organizacion:String;
+	ac_or_descripcion:String;
+	ac_or_costo_estimado:String;
+	ac_or_duracion:String;
     }
 
     let min=0;
@@ -24,24 +27,18 @@
   let numeroAleatorio = getRandomNumber(1, 100);
   
   
-  let actividades: Actividad[] = [{
-    nombre_actividad: 'Actividad 1',
-    fecha_inicio: '2022-01-01',
-    fecha_fin_estimada: '2022-01-15'
-  },
-  {
-    nombre_actividad: 'Actividad 2',
-    fecha_inicio: '2022-01-16',
-    fecha_fin_estimada: '2022-01-30'
-  },
-  {
-    nombre_actividad: 'Actividad 3',
-    fecha_inicio: '2022-02-01',
-    fecha_fin_estimada: '2022-02-15'
-  }
-      // Tus datos aquí
-    ];
+  
+  export let actividades: Actividad[] = [];
 
+  async function mostrarDatos() {
+    
+    const response = await fetch('http://localhost:4000/actividades');
+    const data: Actividad[] = await response.json();
+    actividades = data;
+    
+  }
+
+  mostrarDatos();
     function editarRegistro(index: number) {
     // Lógica para editar el registro en 'datos'
     console.log(`Editando registro en índice ${index}`);
@@ -57,17 +54,26 @@
   <table>
     <thead>
       <tr>
-        <th>Nombre Actividad</th>
-        <th>Fecha Inicio</th>
-        <th>Fecha Fin Estimada</th>
+       
+        <th>Numero Actividad</th>
+        <th>Numero Etapa</th>
+        <th>Numero Proyecto</th>
+        <th>Descripcion</th>
+        <th>Costo estimado</th>
+        <th>Duracion</th>
+  
       </tr>
     </thead>
     <tbody>
       {#each actividades as actividad, i}
         <tr>
-          <td>{actividad.nombre_actividad}</td>
-          <td>{actividad.fecha_inicio}</td>
-          <td>{actividad.fecha_fin_estimada}</td>
+          <td>{actividad.id_actividad_organizacion}</td>
+          <td>{actividad.id_etapa_organizacion}</td>
+          <td>{actividad.id_proyecto_organizacion}</td>
+          <td>{actividad.ac_or_descripcion}</td>
+          <td>{actividad.ac_or_costo_estimado}</td>
+          <td>{actividad.ac_or_duracion}</td>
+          
           <div class="botonesUD">
               <a href=/admin/HomeAdmin/registrar/proyecto/configuracionProyecto/configurarEtapa/configurarActividad>
                 <button on:click={() => editarRegistro(i)}>
