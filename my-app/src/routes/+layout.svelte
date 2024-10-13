@@ -5,7 +5,7 @@
     <div class="CajaEncabezadoAdmin">
       <div class="Caja2">
         <div class="logo">
-            <img src="/src/images/minerucab_logo.png" alt="minerucab Logo">
+            <img src="/src/images/logo_ucabair.png" alt="minerucab Logo">
         </div>
         <div class="Admin">
         </div>    
