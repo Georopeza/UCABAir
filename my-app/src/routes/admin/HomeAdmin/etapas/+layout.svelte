@@ -3,6 +3,7 @@
 
   let searchTerm = '';
   const fecha=new Date();
+  const fecha_fin_estimada=new Date();
   function search() {
     // Lógica de búsqueda
     console.log(`Buscando: ${searchTerm}`); 
@@ -10,11 +11,11 @@
     let opcionSeleccionada = 'Clientes';
     // Define una interfaz para el tipo de datos que contiene 'datos'
     interface Etapa {
-      nombre_etapa: string;
-      costo: string;
-      fecha_inicio:string;
-      fecha_fin_estimada:string;
-      cant_actividades:number;
+      pieza: string;
+      lugar_ensamblaje: string;
+      fecha_inicio: string;
+      fecha_fin_estimada: string;
+      status: string;
     }
 
 
@@ -28,26 +29,34 @@
   let numeroAleatorio = getRandomNumber(1, 100);
   
     // Ahora declara 'datos' con el tipo explícito 'Dato[]'
-  let etapas: Etapa[] = [{
-    nombre_etapa: 'Análisis',
-    costo: '$' + getRandomNumber(min, max),
+  let etapas: Etapa[] = [
+  {
+    pieza: "Ala",
+    lugar_ensamblaje: "Hangar 1",
     fecha_inicio: fecha.toLocaleDateString(),
-    fecha_fin_estimada: fecha.toLocaleDateString(),
-    cant_actividades: getRandomNumber(1, 10)
+    fecha_fin_estimada: duracionRandom().toLocaleDateString(),
+    status: "En Progreso"
   },
   {
-    nombre_etapa: 'Diseño',
-    costo: '$' + getRandomNumber(min, max),
+    pieza: "Fuselaje",
+    lugar_ensamblaje: "Hangar 2",
     fecha_inicio: fecha.toLocaleDateString(),
-    fecha_fin_estimada: fecha.toLocaleDateString(),
-    cant_actividades: getRandomNumber(1, 10)
+    fecha_fin_estimada: duracionRandom().toLocaleDateString(),
+    status: "En Progreso"
   },
   {
-    nombre_etapa: 'Desarrollo',
-    costo: '$' + getRandomNumber(min, max),
+    pieza: "Cola",
+    lugar_ensamblaje: "Hangar 3",
     fecha_inicio: fecha.toLocaleDateString(),
-    fecha_fin_estimada: fecha.toLocaleDateString(),
-    cant_actividades: getRandomNumber(1, 10)
+    fecha_fin_estimada: duracionRandom().toLocaleDateString(),
+    status: "En Progreso"
+  },
+  {
+    pieza: "Motor",
+    lugar_ensamblaje: "Hangar 4",
+    fecha_inicio: fecha.toLocaleDateString(),
+    fecha_fin_estimada:duracionRandom().toLocaleDateString(),
+    status: "En Progreso"
   }
       // Tus datos aquí
     ];
@@ -64,6 +73,13 @@
     console.log(`Eliminando registro en índice ${index}`);
   }
 
+  function duracionRandom() {
+    fecha_fin_estimada.setFullYear(fecha_fin_estimada.getFullYear()+getRandomNumber(0, 1));
+    fecha_fin_estimada.setMonth(fecha_fin_estimada.getMonth()+getRandomNumber(0, 12));
+    fecha_fin_estimada.setDate(fecha_fin_estimada.getDate()+getRandomNumber(0, 30));
+    return fecha_fin_estimada;
+  }
+
   function obtenerActividades(index: number) {
     // Lógica para eliminar el registro en 'datos'
     console.log(`Eliminando registro en índice ${index}`);
@@ -71,26 +87,31 @@
     goto(`/admin/HomeAdmin/actividades/`);
   }
 
+let random=getRandomNumber(0,etapas.length-1);
+console.log(etapas.length);
+console.log(random);
+
   </script>
   <h2>Etapas</h2>
+  <h2>Ensamblaje {etapas[random].pieza}</h2>
   <table>
     <thead>
       <tr>
-        <th>Etapa</th>
-        <th>Costo</th>
-        <th>Fecha Inicio</th>
+        <th>Pieza</th>
+        <th>Lugar de Ensamblaje</th>
+        <th>Fecha de Inicio</th>
         <th>Fecha Fin Estimada</th>
-        <th>cant_actividades</th>
+        <th>Status</th>
       </tr>
     </thead>
     <tbody>
       {#each etapas as etapa, i}
         <tr>
-          <td>{etapa.nombre_etapa}</td>
-          <td>{etapa.costo}</td>
-          <td>{etapa.fecha_inicio}</td>
-          <td>{etapa.fecha_fin_estimada}</td>
-          <td>{etapa.cant_actividades}</td>
+            <td>{etapa.pieza}</td>
+            <td>{etapa.lugar_ensamblaje}</td>
+            <td>{etapa.fecha_inicio}</td>
+            <td>{etapa.fecha_fin_estimada}</td>
+            <td>{etapa.status}</td>
           <td>
             <div class="botonesUD">
                   <button on:click={() => editarRegistro(i)}>

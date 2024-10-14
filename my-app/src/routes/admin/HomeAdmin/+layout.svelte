@@ -6,12 +6,12 @@
     }
     let opcionSeleccionada = '';
   let categories = [
-    { id: 'admin/HomeAdmin/aliados', name: 'Aliados' },
     { id: 'admin/HomeAdmin/clientes', name: 'Clientes' },
     { id: 'admin/HomeAdmin/empleado', name: 'Empleados' },
-    { id: 'admin/HomeAdmin/maquinaria', name: 'Maquinaria' },
-    { id: 'admin/HomeAdmin/mineral', name: 'Mineral' },
-    { id: 'admin/HomeAdmin/proyectos', name: 'Proyectos' },
+    { id: 'admin/HomeAdmin/proyectos', name: 'Ensamblajes' },
+    { id: 'admin/HomeAdmin/mineral', name: 'Inventario'},
+    { id: 'admin/HomeAdmin/aliados', name: 'Proveedores' },
+    { id: 'admin/HomeAdmin/proyectos', name: 'Pruebas' },
     { id: 'admin/HomeAdmin/roles', name: 'Roles' }
   ];
 </script>

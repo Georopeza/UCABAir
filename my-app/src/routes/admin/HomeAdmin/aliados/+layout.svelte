@@ -56,7 +56,7 @@
     console.log(`Eliminando registro en índice ${index}`);
   }  
   </script>
-  <h2>Aliados</h2>
+  <h2>Proveedores</h2>
   <table>
     <thead>
       <tr>
@@ -65,7 +65,6 @@
         <th>Dirección Fiscal</th>
         <th>Teléfono</th>
         <th>Correo</th>
-        <th>Capacidad Instalada</th>
       </tr>
     </thead>
     <tbody>
@@ -76,7 +75,6 @@
             <td>{aliado.direccion_fiscal}</td>
             <td>{aliado.telefono}</td>
             <td>{aliado.correo}</td>
-            <td>{aliado.capacidad_instalada}</td>
             <td>
               <div class="botonesUD">
                 <a href=/admin/HomeAdmin/editar/aliado>
